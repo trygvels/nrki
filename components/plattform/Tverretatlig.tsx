@@ -173,35 +173,36 @@ export function Tverretatlig() {
           </div>
         </div>
 
-        {/* Objection-handling boks for store etater */}
+        {/* En vanlig innvending — beskrivende, ikke adressert */}
         <div className="mt-12 grid gap-8 border border-foreground bg-background p-8 md:grid-cols-[1fr_2fr] md:gap-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-              Til store etater
+              En vanlig innvending
             </p>
             <h3 className="mt-2 font-serif text-2xl italic leading-snug text-foreground">
-              «Vi har jo allerede en chat på nettsidene våre.»
+              «Men mange etater har jo allerede egne chat-vinduer.»
             </h3>
           </div>
           <div className="space-y-4 text-foreground/90">
             <p>
-              Behold den. Bygg den videre. Behold deres egne
-              grensesnitt og merkevare. Men koble den til MCP-registret
-              nrki forvalter, så får deres egen chat tilgang til Lånekassens
-              satser, NAVs ytelseslogikk, Skatteetatens regler — og alt det
-              andre som ligger der.
+              Ja — og i en slik plattform ville disse chatene beholdt
+              sine egne grensesnitt og merkevarer. Ved å koble dem til
+              MCP-registret ville de samtidig fått tilgang til Lånekassens
+              satser, NAVs ytelseslogikk, Skatteetatens regler — og alt
+              det andre som ligger der.
             </p>
             <p>
-              Når dere selv publiserer ressursene deres som MCP-server, kan
-              <strong> alle andre </strong> bruke dem også: andre etater,
-              kommuner, sivilsamfunn, fagsystemer, akademia. Innbyggerne
-              møter dere fortsatt der dere selv velger — vi øker bare
-              hvor mye dere kan svare på når de først er der.
+              Når en etat selv publiserer ressursene sine som MCP-server,
+              kan <strong>alle andre</strong> bruke dem også: andre
+              etater, kommuner, sivilsamfunn, fagsystemer, akademia.
+              Innbyggeren møter hver etat der den selv velger — plattformen
+              øker bare hva etaten kan svare på når innbyggeren først
+              er der.
             </p>
             <p className="text-sm text-muted">
-              Dere eier fremdeles dataene. Dere godkjenner hvilke modeller
-              de kan brukes med. Dere får i tillegg innsikt i tverretatlige
-              spørsmål dere ikke har i dag.
+              Etaten eier fremdeles dataene. Etaten godkjenner hvilke
+              modeller de kan brukes med. Som bonus får den innsikt i
+              tverretatlige spørsmål som er vanskelig å få i dag.
             </p>
           </div>
         </div>

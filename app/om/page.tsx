@@ -110,18 +110,18 @@ export default function OmPage() {
             </p>
 
             <h2 className="mt-10 text-2xl font-semibold tracking-tight">
-              Veien videre
+              Om forfatteren
             </h2>
             <p>
-              Dette nettstedet er foreløpig bare et forslag, skrevet av én
-              person som synes ideen fortjener en samtale. Ekte realisering vil
-              kreve politisk vilje, offentlig finansiering, samarbeid med
-              offentlige etater, fagmiljøer som IT- og språkforskning, og ikke
-              minst brukere som er villige til å gi tilbakemelding.
+              Dette nettstedet er skrevet og visualisert av{" "}
+              <strong>Trygve Leithe Svalheim</strong>. Det er ikke en
+              tjeneste som rekrutterer, ikke et prosjekt som søker
+              finansiering, og ikke tilknyttet en faktisk leverandør. Det
+              er ett forsøk på å konkretisere en vag idé — slik at den
+              kan diskuteres på grunnlag av noe mer enn ord.
             </p>
             <p>
-              All koden bak siden er åpen. Du kan lese den, foreslå endringer,
-              eller bare diskutere ideen videre på{" "}
+              Koden bak siden er publisert som åpen kildekode på{" "}
               <a
                 href="https://github.com/trygvels/nrki"
                 target="_blank"
@@ -129,8 +129,8 @@ export default function OmPage() {
                 className="text-accent hover:underline"
               >
                 GitHub
-              </a>
-              .
+              </a>{" "}
+              for dem som vil se hvordan konseptet er bygget teknisk.
             </p>
 
             <div className="mt-12 flex flex-wrap gap-3">

@@ -1,27 +1,27 @@
 const steg = [
   {
     nummer: "01",
-    tittel: "Registrer din etat",
+    tittel: "Registrering av etaten",
     beskrivelse:
-      "Opprett tilgang via Maskinporten / ID-porten. Tildel ansvarlige kontakter for teknisk integrasjon og fagansvar.",
+      "Tilgang opprettes via Maskinporten / ID-porten. Etaten utpeker ansvarlige kontakter for teknisk integrasjon og fagansvar.",
   },
   {
     nummer: "02",
-    tittel: "Eksponer data via MCP",
+    tittel: "Eksponering av data via MCP",
     beskrivelse:
-      "Sett opp en MCP-server som beskriver ressursene dere vil dele. Bruk datakontrakt-skjemaet for hver ressurs.",
+      "Etaten setter opp en MCP-server som beskriver ressursene som skal deles. Hver ressurs får en datakontrakt.",
   },
   {
     nummer: "03",
-    tittel: "Godkjenn modellene",
+    tittel: "Godkjenning av modeller",
     beskrivelse:
-      "Velg hvilke modellkategorier deres data kan brukes med. Strengeste valg: kun selv-hostet. Bredeste valg: alle godkjente.",
+      "Etaten avgjør hvilke modellkategorier som har tilgang til ressursene. Strengeste valg: kun selv-hostet. Bredeste valg: alle godkjente.",
   },
   {
     nummer: "04",
-    tittel: "Test i sandbox før dere går live",
+    tittel: "Testing i sandbox før produksjon",
     beskrivelse:
-      "Last opp testspørsmål og sammenlign hvordan ulike modeller svarer på deres materiale. Justér før dere lar innbyggerne bruke det.",
+      "Etaten laster opp testspørsmål og sammenligner hvordan ulike modeller svarer på deres materiale — og kan justere før innbyggerne bruker det.",
   },
 ];
 
@@ -33,14 +33,14 @@ export function AktorOnboarding() {
     >
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          For offentlige aktører
+          Tilkobling for offentlige aktører
         </p>
         <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          Slik kobler din etat seg på.
+          Slik ville tilkoblingen fungert.
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-muted">
           Fire steg fra ide til kjørende integrasjon. Tekniske krav er
-          dokumentert i seksjonen om standarder over.
+          beskrevet i seksjonen om standarder over.
         </p>
 
         <ol className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">

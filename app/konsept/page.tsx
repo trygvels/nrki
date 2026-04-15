@@ -45,7 +45,6 @@ export default function KonseptPage() {
             <SandboxMock />
             <KommuneBestillingsflyt />
             <Posisjonering />
-            <Bidra />
           </div>
         </div>
       </main>
@@ -93,39 +92,3 @@ function Hero() {
   );
 }
 
-function Bidra() {
-  return (
-    <section id="bidra" className="border-b border-border scroll-mt-20">
-      <div className="px-4 py-24 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-          Veien videre
-        </p>
-        <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          Vi trenger pilotetater, kommuner og fagpersoner.
-        </h2>
-        <p className="mt-4 max-w-3xl text-lg text-muted">
-          Konseptet er ikke realisert ennå. Det er en åpen invitasjon. Hvis du
-          er i en etat eller kommune som vil være pilot, eller en fagperson
-          som vil bidra med kompetanse innen modellevaluering, datakontrakter,
-          MCP-implementasjoner eller juridiske rammer — ta kontakt.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="https://github.com/trygvels/nrki/issues/new"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink hover:brightness-110"
-          >
-            Åpne et issue på GitHub →
-          </a>
-          <Link
-            href="/om"
-            className="inline-flex h-12 items-center border border-border bg-background px-6 text-sm font-semibold transition hover:border-foreground"
-          >
-            Les hovedvisjonen
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}

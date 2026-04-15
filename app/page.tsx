@@ -3,7 +3,7 @@ import { Disclaimer } from "@/components/Disclaimer";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { HvorforNrki } from "@/components/HvorforNrki";
-import { Kontakt } from "@/components/Kontakt";
+import { Signatur } from "@/components/Signatur";
 import { Nav } from "@/components/Nav";
 import { OffentligData } from "@/components/OffentligData";
 import { SammenligningNRK } from "@/components/SammenligningNRK";
@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </section>
         <SammenligningNRK />
-        <Kontakt />
+        <Signatur />
       </main>
       <Footer />
     </>

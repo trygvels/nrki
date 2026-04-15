@@ -16,6 +16,12 @@ export function Footer() {
             den norske stat.</strong> Eventuelle likheter med offisielle
             tjenester er bevisste, men kun illustrative.
           </p>
+          <p className="mt-6 text-sm text-muted">
+            Forfatter:{" "}
+            <span className="font-semibold text-foreground">
+              Trygve Leithe Svalheim
+            </span>
+          </p>
         </div>
         <div>
           <h3 className="text-xs font-semibold uppercase tracking-wider text-muted">
@@ -67,16 +73,6 @@ export function Footer() {
                 rel="noopener noreferrer"
               >
                 Dokumentasjon
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/trygvels/nrki/issues"
-                className="hover:text-accent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Foreslå endringer
               </a>
             </li>
           </ul>

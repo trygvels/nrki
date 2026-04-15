@@ -13,7 +13,6 @@ const seksjoner = [
   { id: "sandbox", tittel: "Sandbox" },
   { id: "kommuner", tittel: "For kommuner" },
   { id: "posisjonering", tittel: "Posisjonering" },
-  { id: "bidra", tittel: "Bidra" },
 ];
 
 function useAktivSeksjon() {
