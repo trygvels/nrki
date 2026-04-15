@@ -8,7 +8,7 @@ export function SammenligningNRK() {
         <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
           NRK er for nyhetene det nrki bør være for kunstig intelligens.
         </h2>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl bg-background/20 sm:grid-cols-2">
+        <div className="mt-12 grid gap-px overflow-hidden bg-background/20 sm:grid-cols-2">
           <div className="bg-foreground p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-background/60">
               NRK, siden 1933

@@ -43,7 +43,7 @@ export function AktorOnboarding() {
           dokumentert i seksjonen om standarder over.
         </p>
 
-        <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-12 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-4">
           {steg.map((s) => (
             <li key={s.nummer} className="flex flex-col gap-3 bg-background p-6">
               <span className="font-mono text-sm text-accent">{s.nummer}</span>

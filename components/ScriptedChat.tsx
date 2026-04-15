@@ -53,7 +53,7 @@ export function ScriptedChat() {
   };
 
   return (
-    <div className="rounded-2xl border border-border bg-background shadow-sm">
+    <div className="border border-border bg-background shadow-sm">
       <div className="flex items-center justify-between border-b border-border px-5 py-3">
         <div className="flex items-center gap-2">
           <span className="inline-block h-3 w-1 bg-accent" aria-hidden />
@@ -89,13 +89,13 @@ export function ScriptedChat() {
         {meldinger.map((m, i) =>
           m.rolle === "bruker" ? (
             <div key={i} className="flex justify-end">
-              <div className="max-w-[80%] rounded-2xl rounded-br-sm bg-foreground px-4 py-3 text-sm text-background">
+              <div className="max-w-[80%] bg-foreground px-4 py-3 text-sm text-background">
                 {m.tekst}
               </div>
             </div>
           ) : (
             <div key={i} className="flex justify-start">
-              <div className="max-w-[90%] rounded-2xl rounded-bl-sm border border-border bg-subtle px-4 py-3 text-sm">
+              <div className="max-w-[90%] border border-border bg-subtle px-4 py-3 text-sm">
                 <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
                   <span className="inline-block h-2 w-1 bg-accent" aria-hidden />
                   nrki
@@ -127,7 +127,7 @@ export function ScriptedChat() {
                   </div>
                 )}
                 {m.merknad && (
-                  <div className="mt-3 rounded-md bg-background px-3 py-2 text-xs italic text-muted">
+                  <div className="mt-3 bg-background px-3 py-2 text-xs italic text-muted">
                     {m.merknad}
                   </div>
                 )}
@@ -138,7 +138,7 @@ export function ScriptedChat() {
 
         {skriver && (
           <div className="flex justify-start">
-            <div className="rounded-2xl rounded-bl-sm border border-border bg-subtle px-4 py-3">
+            <div className="border border-border bg-subtle px-4 py-3">
               <div className="flex gap-1">
                 <span className="h-2 w-2 animate-bounce rounded-full bg-muted [animation-delay:-0.3s]" />
                 <span className="h-2 w-2 animate-bounce rounded-full bg-muted [animation-delay:-0.15s]" />
@@ -159,7 +159,7 @@ export function ScriptedChat() {
               key={s.id}
               onClick={() => stillSporsmal(s)}
               disabled={skriver}
-              className={`rounded-full border px-3 py-1.5 text-xs transition disabled:cursor-not-allowed disabled:opacity-50 ${
+              className={`border px-3 py-1.5 text-xs transition disabled:cursor-not-allowed disabled:opacity-50 ${
                 aktivId === s.id
                   ? "border-accent bg-accent text-accent-ink"
                   : "border-border bg-background text-foreground hover:border-foreground"

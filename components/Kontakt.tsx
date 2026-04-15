@@ -21,7 +21,7 @@ export function Kontakt() {
               href="https://github.com/trygvels/nrki"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition hover:border-foreground"
+              className="group flex flex-col justify-between border border-border bg-background p-6 transition hover:border-foreground"
             >
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-muted">
@@ -40,7 +40,7 @@ export function Kontakt() {
               href="https://github.com/trygvels/nrki/issues/new"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-background p-6 transition hover:border-foreground"
+              className="group flex flex-col justify-between border border-border bg-background p-6 transition hover:border-foreground"
             >
               <div>
                 <div className="text-xs font-semibold uppercase tracking-wider text-muted">

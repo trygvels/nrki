@@ -48,7 +48,7 @@ export function Prinsipper() {
             allmenn KI-tjeneste.
           </p>
         </div>
-        <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-12 grid gap-px overflow-hidden border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {prinsipper.map((p, i) => (
             <li
               key={p.tittel}

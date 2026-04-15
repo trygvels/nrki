@@ -136,13 +136,13 @@ export default function OmPage() {
             <div className="mt-12 flex flex-wrap gap-3">
               <Link
                 href="/demo"
-                className="inline-flex h-11 items-center rounded-full bg-accent px-5 text-sm font-semibold text-accent-ink transition hover:brightness-110"
+                className="inline-flex h-11 items-center bg-accent px-5 text-sm font-semibold text-accent-ink transition hover:brightness-110"
               >
                 Prøv demoen →
               </Link>
               <Link
                 href="/"
-                className="inline-flex h-11 items-center rounded-full border border-border bg-background px-5 text-sm font-semibold transition hover:border-foreground"
+                className="inline-flex h-11 items-center border border-border bg-background px-5 text-sm font-semibold transition hover:border-foreground"
               >
                 Tilbake til forsiden
               </Link>

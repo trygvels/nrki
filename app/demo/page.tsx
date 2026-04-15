@@ -33,7 +33,7 @@ export default function DemoPage() {
             <div className="mt-12">
               <ScriptedChat />
             </div>
-            <div className="mt-8 grid gap-4 rounded-2xl border border-border bg-subtle p-6 text-sm text-muted sm:grid-cols-2">
+            <div className="mt-8 grid gap-4 border border-border bg-subtle p-6 text-sm text-muted sm:grid-cols-2">
               <div>
                 <div className="font-semibold text-foreground">
                   Hvorfor kuratert?

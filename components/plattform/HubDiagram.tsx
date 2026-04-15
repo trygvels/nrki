@@ -19,7 +19,7 @@ export function HubDiagram() {
 
         <div className="mt-12 grid gap-4 lg:grid-cols-[1fr_auto_1fr_auto_1fr]">
           {/* Lag 1: Brukere */}
-          <div className="rounded-2xl border border-border bg-background p-6">
+          <div className="border border-border bg-background p-6">
             <p className="text-xs font-semibold uppercase tracking-wider text-muted">
               Brukerlag
             </p>
@@ -39,7 +39,7 @@ export function HubDiagram() {
           </div>
 
           {/* Lag 2: Orchestrator */}
-          <div className="rounded-2xl border-2 border-accent bg-background p-6 shadow-sm">
+          <div className="border-2 border-accent bg-background p-6 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">
               Orkestrator
             </p>
@@ -60,7 +60,7 @@ export function HubDiagram() {
 
           {/* Lag 3 split */}
           <div className="grid gap-4">
-            <div className="rounded-2xl border border-border bg-background p-6">
+            <div className="border border-border bg-background p-6">
               <p className="text-xs font-semibold uppercase tracking-wider text-muted">
                 Datalag
               </p>
@@ -70,7 +70,7 @@ export function HubDiagram() {
                 MCP-servere de eier selv.
               </p>
             </div>
-            <div className="rounded-2xl border border-border bg-background p-6">
+            <div className="border border-border bg-background p-6">
               <p className="text-xs font-semibold uppercase tracking-wider text-muted">
                 Modellag
               </p>

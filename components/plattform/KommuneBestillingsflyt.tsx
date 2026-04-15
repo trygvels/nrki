@@ -58,7 +58,7 @@ export function KommuneBestillingsflyt() {
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_1.4fr]">
           {/* Bestillingsskjema */}
-          <div className="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <div className="border border-border bg-background p-6 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">
               Bestillingsskjema
             </p>
@@ -80,7 +80,7 @@ export function KommuneBestillingsflyt() {
                       );
                       if (valgt) setValgtKommune(valgt);
                     }}
-                    className="mt-1.5 block w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm focus:border-accent focus:outline-none"
+                    className="mt-1.5 block w-full border border-border bg-background px-4 py-2.5 text-sm focus:border-accent focus:outline-none"
                   >
                     {kommuner.map((k) => (
                       <option key={k.id} value={k.id}>
@@ -98,7 +98,7 @@ export function KommuneBestillingsflyt() {
                     type="text"
                     value={valgtKommune.url}
                     readOnly
-                    className="mt-1.5 block w-full rounded-lg border border-border bg-subtle px-4 py-2.5 text-sm text-muted"
+                    className="mt-1.5 block w-full border border-border bg-subtle px-4 py-2.5 text-sm text-muted"
                   />
                 </div>
 
@@ -110,7 +110,7 @@ export function KommuneBestillingsflyt() {
                     {modellkategorier.map((k) => (
                       <label
                         key={k.id}
-                        className={`flex cursor-pointer gap-3 rounded-lg border px-4 py-3 transition ${
+                        className={`flex cursor-pointer gap-3 border px-4 py-3 transition ${
                           modellkategori === k.id
                             ? "border-accent bg-accent/5"
                             : "border-border hover:border-foreground"
@@ -128,7 +128,7 @@ export function KommuneBestillingsflyt() {
                           <div className="font-semibold">
                             {k.navn}
                             {k.id === "norsk-hostet" && (
-                              <span className="ml-2 rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-accent">
+                              <span className="ml-2 bg-accent/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-accent">
                                 Anbefalt
                               </span>
                             )}
@@ -144,7 +144,7 @@ export function KommuneBestillingsflyt() {
 
                 <button
                   onClick={() => setSteg("forhandsvisning")}
-                  className="block w-full rounded-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink hover:brightness-110"
+                  className="block w-full bg-accent px-5 py-3 text-sm font-semibold text-accent-ink hover:brightness-110"
                 >
                   Bestill og se forhåndsvisning →
                 </button>
@@ -156,7 +156,7 @@ export function KommuneBestillingsflyt() {
 
             {steg === "forhandsvisning" && (
               <div className="mt-6 space-y-4">
-                <div className="rounded-lg bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+                <div className="bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
                   ✓ Widget opprettet for <strong>{valgtKommune.navn}</strong>
                 </div>
                 <div>
@@ -178,7 +178,7 @@ export function KommuneBestillingsflyt() {
                 </div>
                 <button
                   onClick={() => setSteg("bestill")}
-                  className="block w-full rounded-full border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
+                  className="block w-full border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
                 >
                   ← Endre bestilling
                 </button>

@@ -60,7 +60,7 @@ export function SandboxMock() {
           deres faktiske spørsmål.
         </p>
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+        <div className="mt-12 overflow-hidden border border-border bg-background shadow-sm">
           {/* Stegindikator */}
           <div className="flex items-center justify-between border-b border-border bg-subtle px-5 py-3 text-xs">
             <div className="flex items-center gap-3">
@@ -73,7 +73,7 @@ export function SandboxMock() {
                     }`}
                   >
                     <span
-                      className={`inline-flex h-5 w-5 items-center justify-center rounded-full text-[10px] ${
+                      className={`inline-flex h-5 w-5 items-center justify-center text-[10px] ${
                         s === steg
                           ? "bg-accent text-accent-ink"
                           : "border border-border bg-background"
@@ -116,7 +116,7 @@ export function SandboxMock() {
                     );
                     if (valgt) setEtat(valgt);
                   }}
-                  className="block w-full max-w-sm rounded-lg border border-border bg-background px-4 py-3 text-base focus:border-accent focus:outline-none"
+                  className="block w-full max-w-sm border border-border bg-background px-4 py-3 text-base focus:border-accent focus:outline-none"
                 >
                   {sandboxEtater.map((e) => (
                     <option key={e.id} value={e.id}>
@@ -126,7 +126,7 @@ export function SandboxMock() {
                 </select>
                 <button
                   onClick={() => setSteg("opplasting")}
-                  className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110"
+                  className="bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110"
                 >
                   Logg inn →
                 </button>
@@ -146,7 +146,7 @@ export function SandboxMock() {
                 </div>
                 <button
                   onClick={() => setOpplastet(true)}
-                  className={`flex w-full items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-10 text-sm transition ${
+                  className={`flex w-full items-center justify-center gap-3 border-2 border-dashed px-6 py-10 text-sm transition ${
                     opplastet
                       ? "border-accent bg-accent/5"
                       : "border-border bg-subtle hover:border-foreground"
@@ -169,7 +169,7 @@ export function SandboxMock() {
                     </>
                   )}
                 </button>
-                <div className="rounded-lg bg-subtle p-4">
+                <div className="bg-subtle p-4">
                   <div className="text-xs font-semibold uppercase tracking-wider text-muted">
                     Forhåndsdefinert testspørsmål
                   </div>
@@ -178,14 +178,14 @@ export function SandboxMock() {
                 <div className="flex gap-3">
                   <button
                     onClick={() => setSteg("login")}
-                    className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
+                    className="border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
                   >
                     ← Tilbake
                   </button>
                   <button
                     onClick={() => setSteg("modeller")}
                     disabled={!opplastet}
-                    className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110 disabled:opacity-40"
+                    className="bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110 disabled:opacity-40"
                   >
                     Neste →
                   </button>
@@ -210,7 +210,7 @@ export function SandboxMock() {
                     return (
                       <label
                         key={m.id}
-                        className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition ${
+                        className={`flex cursor-pointer items-center gap-3 border px-4 py-3 transition ${
                           valgt
                             ? "border-accent bg-accent/5"
                             : "border-border hover:border-foreground"
@@ -231,14 +231,14 @@ export function SandboxMock() {
                 <div className="flex gap-3">
                   <button
                     onClick={() => setSteg("opplasting")}
-                    className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
+                    className="border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
                   >
                     ← Tilbake
                   </button>
                   <button
                     onClick={() => setSteg("resultat")}
                     disabled={valgteModeller.length === 0}
-                    className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110 disabled:opacity-40"
+                    className="bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110 disabled:opacity-40"
                   >
                     Kjør sammenligning →
                   </button>
@@ -260,7 +260,7 @@ export function SandboxMock() {
                   {resultater.map((r) => (
                     <div
                       key={r.modellId}
-                      className="flex flex-col gap-3 rounded-xl border border-border bg-subtle p-5"
+                      className="flex flex-col gap-3 border border-border bg-subtle p-5"
                     >
                       <header className="flex items-center justify-between">
                         <h4 className="font-semibold">{r.modellNavn}</h4>
@@ -288,7 +288,7 @@ export function SandboxMock() {
                         />
                       </dl>
                       {r.bemerkning && (
-                        <p className="rounded bg-background px-3 py-2 text-xs italic text-muted">
+                        <p className="bg-background px-3 py-2 text-xs italic text-muted">
                           {r.bemerkning}
                         </p>
                       )}
@@ -298,13 +298,13 @@ export function SandboxMock() {
                 <div className="flex gap-3">
                   <button
                     onClick={() => setSteg("modeller")}
-                    className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
+                    className="border border-border px-5 py-2.5 text-sm font-semibold hover:border-foreground"
                   >
                     ← Velg andre modeller
                   </button>
                   <button
                     onClick={nullstill}
-                    className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110"
+                    className="bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink hover:brightness-110"
                   >
                     Start på nytt
                   </button>

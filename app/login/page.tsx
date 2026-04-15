@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Logo } from "@/components/Logo";
 import { logInn } from "./actions";
 
 export const metadata: Metadata = {
@@ -17,11 +18,8 @@ export default async function LoginPage({ searchParams }: Props) {
     <main className="flex flex-1 items-center justify-center px-4 py-16">
       <div className="w-full max-w-sm">
         <div className="mb-8">
-          <span className="font-display text-5xl leading-none tracking-wide">
-            <span className="text-accent">NR</span>
-            <span className="text-flagg-bla">KI</span>
-          </span>
-          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted">
+          <Logo storrelse="lg" />
+          <p className="mt-3 text-xs uppercase tracking-[0.2em] text-muted">
             Norsk Riks-KI · privat konseptforslag
           </p>
         </div>
@@ -46,11 +44,11 @@ export default async function LoginPage({ searchParams }: Props) {
             autoComplete="current-password"
             placeholder="Passord"
             required
-            className="block w-full rounded-lg border border-border bg-background px-4 py-3 text-base outline-none ring-accent/30 transition focus:border-accent focus:ring-2"
+            className="block w-full border border-border bg-background px-4 py-3 text-base outline-none ring-accent/30 transition focus:border-accent focus:ring-2"
           />
           <button
             type="submit"
-            className="block w-full rounded-lg bg-accent px-4 py-3 text-sm font-semibold text-accent-ink transition hover:brightness-110"
+            className="block w-full bg-accent px-4 py-3 text-sm font-semibold text-accent-ink transition hover:brightness-110"
           >
             Logg inn
           </button>

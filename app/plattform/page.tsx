@@ -72,13 +72,13 @@ function Hero() {
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href="#arkitektur"
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-accent-ink hover:brightness-110"
+            className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink hover:brightness-110"
           >
             Les hele konseptet ↓
           </a>
           <Link
             href="/om"
-            className="inline-flex h-12 items-center rounded-full border border-border bg-background px-6 text-sm font-semibold transition hover:border-foreground"
+            className="inline-flex h-12 items-center border border-border bg-background px-6 text-sm font-semibold transition hover:border-foreground"
           >
             Les hovedvisjonen
           </Link>
@@ -110,13 +110,13 @@ function Bidra() {
             href="https://github.com/trygvels/nrki/issues/new"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-accent-ink hover:brightness-110"
+            className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink hover:brightness-110"
           >
             Åpne et issue på GitHub →
           </a>
           <Link
             href="/om"
-            className="inline-flex h-12 items-center rounded-full border border-border bg-background px-6 text-sm font-semibold transition hover:border-foreground"
+            className="inline-flex h-12 items-center border border-border bg-background px-6 text-sm font-semibold transition hover:border-foreground"
           >
             Les hovedvisjonen
           </Link>

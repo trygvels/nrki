@@ -20,14 +20,14 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap gap-3">
           <Link
             href="/demo"
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
+            className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
           >
             Prøv demoen
             <span aria-hidden>→</span>
           </Link>
           <Link
             href="/om"
-            className="inline-flex h-12 items-center rounded-full border border-border bg-background px-6 text-sm font-semibold text-foreground transition hover:border-foreground"
+            className="inline-flex h-12 items-center border border-border bg-background px-6 text-sm font-semibold text-foreground transition hover:border-foreground"
           >
             Les visjonen
           </Link>

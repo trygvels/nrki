@@ -28,7 +28,7 @@ export function ModellKatalog() {
           etat med mindre sensitiv data kan tillate alle.
         </p>
 
-        <div className="mt-4 max-w-3xl rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        <div className="mt-4 max-w-3xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           <strong>Eksempel-katalog.</strong> Listen under er illustrativ.
           Faktisk modellutvalg vil avgjøres av et fagråd og en
           jurisdiksjonsanalyse — ikke av denne demonstrasjonssiden.
@@ -51,7 +51,7 @@ export function ModellKatalog() {
                 <p className="mt-2 max-w-3xl text-muted">
                   {innhold.beskrivelse}
                 </p>
-                <div className="mt-5 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-5 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
                   {liste.map((m) => (
                     <article
                       key={m.id}
@@ -86,7 +86,7 @@ export function ModellKatalog() {
         </div>
 
         {/* CLOUD Act-forklaring */}
-        <div className="mt-16 grid gap-8 rounded-2xl border border-border bg-background p-8 md:grid-cols-[2fr_3fr]">
+        <div className="mt-16 grid gap-8 border border-border bg-background p-8 md:grid-cols-[2fr_3fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">
               Hvorfor jurisdiksjon teller

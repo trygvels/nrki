@@ -82,7 +82,7 @@ export function StandarderSeksjon() {
           <p className="mt-3 max-w-3xl text-muted">
             Noen typer innhold tåler ikke å bli omformulert: lovtekst,
             satser, partiprogramutdrag, vedtak. Ved å markere innholdet med en
-            <code className="mx-1 rounded bg-subtle px-1.5 py-0.5 text-sm">
+            <code className="mx-1 bg-subtle px-1.5 py-0.5 text-sm">
               &lt;kilde-rå&gt;
             </code>
             -tag forplikter nrki seg til å vise teksten ufiltrert med

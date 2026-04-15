@@ -75,7 +75,7 @@ function PlattformTease() {
           <div className="flex md:justify-end">
             <Link
               href="/plattform"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
+              className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
             >
               Les om plattformen →
             </Link>

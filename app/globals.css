@@ -2,10 +2,10 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0a;
-  --muted: #525252;
-  --subtle: #f4f4f5;
-  --border: #e5e5e5;
+  --foreground: #0a1626;
+  --muted: #4a5568;
+  --subtle: #f3f4f6;
+  --border: #d9dde3;
   --accent: #ba0c2f;
   --accent-mork: #8a0823;
   --accent-ink: #ffffff;
@@ -23,7 +23,6 @@
   --color-accent-ink: var(--accent-ink);
   --color-flagg-bla: var(--flagg-bla);
   --font-sans: var(--font-inter);
-  --font-display: var(--font-bebas);
 }
 
 html {

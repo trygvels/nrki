@@ -34,7 +34,7 @@ export function OffentligData() {
             </p>
           </div>
           <div>
-            <div className="rounded-2xl border border-border bg-background p-2">
+            <div className="border border-border bg-background p-2">
               <ul className="divide-y divide-border">
                 {etater.map((e) => (
                   <li

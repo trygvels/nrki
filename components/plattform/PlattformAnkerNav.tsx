@@ -47,7 +47,7 @@ export function PlattformAnkerNavMobil() {
           <a
             key={s.id}
             href={`#${s.id}`}
-            className={`shrink-0 rounded-full border px-3 py-1 text-xs transition ${
+            className={`shrink-0 border px-3 py-1 text-xs transition ${
               aktiv === s.id
                 ? "border-accent bg-accent text-accent-ink"
                 : "border-border bg-background text-muted hover:border-foreground"

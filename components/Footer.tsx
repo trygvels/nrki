@@ -1,15 +1,13 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 
 export function Footer() {
   return (
     <footer className="mt-24 border-t border-border bg-subtle">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-baseline gap-3">
-            <span className="font-display text-3xl leading-none tracking-wide">
-              <span className="text-accent">NR</span>
-              <span className="text-flagg-bla">KI</span>
-            </span>
+          <div className="flex items-center gap-3">
+            <Logo storrelse="md" />
             <span className="text-sm text-muted">Norsk Riks-KI</span>
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted">

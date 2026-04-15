@@ -1,16 +1,12 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 w-full bg-accent text-accent-ink shadow-sm">
+    <header className="sticky top-0 z-40 w-full bg-accent text-accent-ink">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link
-          href="/"
-          className="font-display text-3xl leading-none tracking-wide"
-          aria-label="nrki — forsiden"
-        >
-          <span className="text-accent-ink">NR</span>
-          <span className="text-flagg-bla">KI</span>
+        <Link href="/" aria-label="nrki — forsiden">
+          <Logo storrelse="md" />
         </Link>
         <nav className="flex items-center gap-5 text-sm font-medium">
           <Link href="/plattform" className="opacity-90 hover:opacity-100">

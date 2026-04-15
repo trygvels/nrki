@@ -77,7 +77,7 @@ export function Posisjonering() {
           har bygget for offentlig sektor.
         </p>
 
-        <div className="mt-12 overflow-hidden rounded-2xl border border-background/20">
+        <div className="mt-12 overflow-hidden border border-background/20">
           <table className="w-full text-left text-sm">
             <thead className="bg-background/5 text-xs uppercase tracking-wider text-background/60">
               <tr>
