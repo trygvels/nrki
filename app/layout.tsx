@@ -31,6 +31,13 @@ export const metadata: Metadata = {
     locale: "nb_NO",
     type: "website",
     url: "https://nrki.no",
+    siteName: "nrki",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "nrki — Norsk Riks-KI",
+    description:
+      "Et forslag til en offentlig, trygg og upartisk kunstig intelligens for alle i Norge.",
   },
 };
 
