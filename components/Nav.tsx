@@ -9,7 +9,8 @@ export function Nav() {
           className="font-display text-3xl leading-none tracking-wide"
           aria-label="nrki — forsiden"
         >
-          NRKI
+          <span className="text-accent-ink">NR</span>
+          <span className="text-flagg-bla">KI</span>
         </Link>
         <nav className="flex items-center gap-5 text-sm font-medium">
           <Link href="/plattform" className="opacity-90 hover:opacity-100">

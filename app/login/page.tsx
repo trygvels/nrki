@@ -17,8 +17,9 @@ export default async function LoginPage({ searchParams }: Props) {
     <main className="flex flex-1 items-center justify-center px-4 py-16">
       <div className="w-full max-w-sm">
         <div className="mb-8">
-          <span className="font-display text-5xl leading-none tracking-wide text-accent">
-            NRKI
+          <span className="font-display text-5xl leading-none tracking-wide">
+            <span className="text-accent">NR</span>
+            <span className="text-flagg-bla">KI</span>
           </span>
           <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted">
             Norsk Riks-KI · privat konseptforslag
