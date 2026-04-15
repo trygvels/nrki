@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nrki — Norsk Riks Kunstig Intelligens
 
-## Getting Started
+> Et forslag om en norsk offentlig, trygg og upartisk AI-tjeneste for alle i
+> Norge — inspirert av NRKs rolle for allmennkringkasting.
 
-First, run the development server:
+Dette repoet inneholder konseptforslag og en landingsside for **nrki**. Siden
+er publisert på [nrki.no](https://nrki.no).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Kort sagt
+
+- AI er i ferd med å bli infrastruktur — på linje med strøm og internett.
+- I dag er de mest brukte AI-tjenestene eid av private, utenlandske selskaper.
+- Nordmenn fortjener en AI-tjeneste som er trygg, upartisk, offentlig eid,
+  forankret i verifiserte norske kilder — og gratis for alle i Norge.
+- Slik NRK er for nyhetene, kan nrki være for kunstig intelligens.
+
+## Hva ligger i repoet?
+
+```
+.
+├── README.md                   ← Denne filen
+├── docs/
+│   ├── visjon.md               ← Den lange pitchen
+│   ├── prinsipper.md           ← De seks prinsippene, utdypet
+│   ├── arkitektur.md           ← Skissert teknisk tilnærming
+│   └── dataintegrasjon.md      ← Hvordan offentlige etater kan bidra
+├── app/                        ← Next.js App Router (sidene)
+├── components/                 ← React-komponenter
+└── lib/demo-samtaler.ts        ← Kuraterte Q&A som vises i demoen
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Kjør siden lokalt
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Siden kjører på [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Status
 
-To learn more about Next.js, take a look at the following resources:
+Dette er et konseptforslag, ikke en offisiell statlig tjeneste. All kode og
+alt innhold er publisert under åpen lisens. Innspill og bidrag er velkomne —
+[åpne et issue](https://github.com/trygvels/nrki/issues) eller send en pull
+request.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Lisens
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT for kode. Tekstinnhold (inkludert `/docs`) er publisert under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
