@@ -6,11 +6,17 @@ import {
   kommuneSamtaler,
   kommuneURL,
 } from "@/lib/kommune-demo-samtaler";
-import type { Samtale } from "@/lib/demo-samtaler";
+import type { Samtale, SvarBlokk } from "@/lib/demo-samtaler";
+import { SvarBlokkRenderer } from "@/components/blokker/SvarBlokkRenderer";
+
+type StreamedBlokk = {
+  blokk: SvarBlokk;
+  ferdig: boolean;
+};
 
 type NrkiMelding = {
   rolle: "nrki";
-  avsnitt: string[];
+  blokker: StreamedBlokk[];
   kilder: Samtale["kilder"];
   merknad?: string;
   ferdig: boolean;
@@ -40,24 +46,60 @@ export function EmbedWidgetForhandsvisning() {
 
     setMeldinger((m) => [
       ...m,
-      { rolle: "nrki", avsnitt: [], kilder: [], ferdig: false },
+      { rolle: "nrki", blokker: [], kilder: [], ferdig: false },
     ]);
 
-    for (let p = 0; p < samtale.svar.length; p++) {
-      const ord = samtale.svar[p].split(" ");
-      let progressiv = "";
-      for (let w = 0; w < ord.length; w++) {
-        progressiv += (w === 0 ? "" : " ") + ord[w];
-        const snapshot = progressiv;
+    for (let i = 0; i < samtale.blokker.length; i++) {
+      const b = samtale.blokker[i];
+      if (b.type === "tekst") {
+        const ord = b.tekst.split(" ");
         setMeldinger((prev) =>
           oppdaterSiste(prev, (siste) => ({
             ...siste,
-            avsnitt: [...siste.avsnitt.slice(0, p), snapshot],
+            blokker: [
+              ...siste.blokker,
+              { blokk: { type: "tekst", tekst: "" }, ferdig: false },
+            ],
           })),
         );
-        await sov(18 + Math.random() * 22);
+        let progressiv = "";
+        for (let w = 0; w < ord.length; w++) {
+          progressiv += (w === 0 ? "" : " ") + ord[w];
+          const snapshot = progressiv;
+          setMeldinger((prev) =>
+            oppdaterSiste(prev, (siste) => ({
+              ...siste,
+              blokker: siste.blokker.map((sb, idx) =>
+                idx === siste.blokker.length - 1
+                  ? {
+                      blokk: { type: "tekst", tekst: snapshot },
+                      ferdig: false,
+                    }
+                  : sb,
+              ),
+            })),
+          );
+          await sov(18 + Math.random() * 22);
+        }
+        setMeldinger((prev) =>
+          oppdaterSiste(prev, (siste) => ({
+            ...siste,
+            blokker: siste.blokker.map((sb, idx) =>
+              idx === siste.blokker.length - 1 ? { ...sb, ferdig: true } : sb,
+            ),
+          })),
+        );
+        await sov(100);
+      } else {
+        await sov(220);
+        setMeldinger((prev) =>
+          oppdaterSiste(prev, (siste) => ({
+            ...siste,
+            blokker: [...siste.blokker, { blokk: b, ferdig: true }],
+          })),
+        );
+        await sov(150);
       }
-      await sov(100);
     }
 
     setMeldinger((prev) =>
@@ -78,7 +120,6 @@ export function EmbedWidgetForhandsvisning() {
 
   return (
     <div className="overflow-hidden border border-border bg-background shadow-lg">
-      {/* Browser-bar mock */}
       <div className="flex items-center gap-2 border-b border-border bg-subtle px-4 py-2">
         <div className="flex gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
@@ -90,7 +131,6 @@ export function EmbedWidgetForhandsvisning() {
         </div>
       </div>
 
-      {/* Mock kommune-side */}
       <div className="grid gap-4 bg-sky-50/60 p-6 sm:grid-cols-[2fr_3fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-sky-900/60">
@@ -108,7 +148,6 @@ export function EmbedWidgetForhandsvisning() {
           </p>
         </div>
 
-        {/* Embeddet widget */}
         <div className="overflow-hidden border border-border bg-background shadow-md">
           <div className="flex items-center justify-between border-b border-border px-4 py-2">
             <div className="flex items-center gap-2">
@@ -148,15 +187,15 @@ export function EmbedWidgetForhandsvisning() {
                 </div>
               ) : (
                 <div key={i} className="flex justify-start">
-                  <div className="max-w-[90%] border border-border bg-subtle px-3 py-2 text-xs">
+                  <div className="w-full max-w-[95%] border border-border bg-subtle px-3 py-2 text-xs">
                     <div className="space-y-2 leading-relaxed">
-                      {m.avsnitt.map((a, j) => (
-                        <p key={j}>
-                          {a}
-                          {!m.ferdig && j === m.avsnitt.length - 1 && (
-                            <span className="ml-0.5 inline-block h-3 w-1 translate-y-0.5 animate-pulse bg-accent" />
-                          )}
-                        </p>
+                      {m.blokker.map((sb, j) => (
+                        <SvarBlokkRenderer
+                          key={j}
+                          blokk={sb.blokk}
+                          visCursor={!sb.ferdig && sb.blokk.type === "tekst"}
+                          kompakt
+                        />
                       ))}
                     </div>
                     {m.ferdig && m.kilder.length > 0 && (

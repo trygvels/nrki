@@ -1,12 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { samtaler, type Samtale } from "@/lib/demo-samtaler";
+import { samtaler, type Samtale, type SvarBlokk } from "@/lib/demo-samtaler";
+import { SvarBlokkRenderer } from "@/components/blokker/SvarBlokkRenderer";
+
+type StreamedBlokk = {
+  blokk: SvarBlokk;
+  ferdig: boolean;
+};
 
 type NrkiMelding = {
   rolle: "nrki";
-  avsnitt: string[];
-  totalAvsnitt: number;
+  blokker: StreamedBlokk[];
   kilder: Samtale["kilder"];
   merknad?: string;
   ferdig: boolean;
@@ -33,36 +38,72 @@ export function ScriptedChat() {
     setAktivId(samtale.id);
     setMeldinger((m) => [...m, { rolle: "bruker", tekst: samtale.sporsmal }]);
     setSkriver(true);
-    await new Promise((r) => setTimeout(r, 500));
+    await sov(450);
     setSkriver(false);
 
     setMeldinger((m) => [
       ...m,
-      {
-        rolle: "nrki",
-        avsnitt: [],
-        totalAvsnitt: samtale.svar.length,
-        kilder: [],
-        ferdig: false,
-      },
+      { rolle: "nrki", blokker: [], kilder: [], ferdig: false },
     ]);
 
-    for (let p = 0; p < samtale.svar.length; p++) {
-      const ord = samtale.svar[p].split(" ");
-      let progressiv = "";
-      for (let w = 0; w < ord.length; w++) {
-        progressiv += (w === 0 ? "" : " ") + ord[w];
-        const snapshot = progressiv;
+    for (let i = 0; i < samtale.blokker.length; i++) {
+      const b = samtale.blokker[i];
+      if (b.type === "tekst") {
+        // Streaming text
+        const ord = b.tekst.split(" ");
+        // Append placeholder block
         setMeldinger((prev) =>
           oppdaterSiste(prev, (siste) => ({
             ...siste,
-            avsnitt: [...siste.avsnitt.slice(0, p), snapshot],
+            blokker: [
+              ...siste.blokker,
+              {
+                blokk: { type: "tekst", tekst: "" } as SvarBlokk,
+                ferdig: false,
+              },
+            ],
           })),
         );
-        await sov(22 + Math.random() * 28);
+        let progressiv = "";
+        for (let w = 0; w < ord.length; w++) {
+          progressiv += (w === 0 ? "" : " ") + ord[w];
+          const snapshot = progressiv;
+          setMeldinger((prev) =>
+            oppdaterSiste(prev, (siste) => ({
+              ...siste,
+              blokker: siste.blokker.map((sb, idx) =>
+                idx === siste.blokker.length - 1
+                  ? {
+                      blokk: { type: "tekst", tekst: snapshot } as SvarBlokk,
+                      ferdig: false,
+                    }
+                  : sb,
+              ),
+            })),
+          );
+          await sov(20 + Math.random() * 25);
+        }
+        // Mark text block as done
+        setMeldinger((prev) =>
+          oppdaterSiste(prev, (siste) => ({
+            ...siste,
+            blokker: siste.blokker.map((sb, idx) =>
+              idx === siste.blokker.length - 1 ? { ...sb, ferdig: true } : sb,
+            ),
+          })),
+        );
+        await sov(120);
+      } else {
+        // Widget block — short pause then drop in
+        await sov(280);
+        setMeldinger((prev) =>
+          oppdaterSiste(prev, (siste) => ({
+            ...siste,
+            blokker: [...siste.blokker, { blokk: b, ferdig: true }],
+          })),
+        );
+        await sov(180);
       }
-      // kort pause mellom avsnitt
-      await sov(120);
     }
 
     setMeldinger((prev) =>
@@ -101,14 +142,14 @@ export function ScriptedChat() {
       <div
         ref={containerRef}
         aria-live="polite"
-        className="flex h-[420px] flex-col gap-4 overflow-y-auto px-5 py-6"
+        className="flex h-[480px] flex-col gap-4 overflow-y-auto px-5 py-6"
       >
         {meldinger.length === 0 && (
           <div className="m-auto max-w-sm text-center text-sm text-muted">
             <p>
-              Dette er en demo. Velg et spørsmål nedenfor for å se hvordan en
-              offentlig KI-tjeneste kunne svart — med kilder, nyanser og uten
-              politisk slagside.
+              Velg et spørsmål nedenfor for å se hvordan en offentlig
+              KI-tjeneste kunne svart — med rik informasjon, kilder og
+              widgets, ikke bare tekst.
             </p>
             <p className="mt-3 text-xs">
               Ingen ekte KI-kall skjer. Svarene er kuraterte eksempler.
@@ -125,19 +166,18 @@ export function ScriptedChat() {
             </div>
           ) : (
             <div key={i} className="flex justify-start">
-              <div className="max-w-[90%] border border-border bg-subtle px-4 py-3 text-sm">
-                <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
+              <div className="w-full max-w-[95%] border border-border bg-subtle px-4 py-3 text-sm">
+                <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
                   <span className="inline-block h-2 w-1 bg-accent" aria-hidden />
                   nrki
                 </div>
                 <div className="space-y-3 leading-relaxed text-foreground">
-                  {m.avsnitt.map((a, j) => (
-                    <p key={j}>
-                      {a}
-                      {!m.ferdig && j === m.avsnitt.length - 1 && (
-                        <span className="ml-0.5 inline-block h-4 w-1.5 translate-y-0.5 animate-pulse bg-accent" />
-                      )}
-                    </p>
+                  {m.blokker.map((sb, j) => (
+                    <SvarBlokkRenderer
+                      key={j}
+                      blokk={sb.blokk}
+                      visCursor={!sb.ferdig && sb.blokk.type === "tekst"}
+                    />
                   ))}
                 </div>
                 {m.ferdig && m.kilder.length > 0 && (
