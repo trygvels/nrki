@@ -16,12 +16,12 @@ import { SandboxMock } from "@/components/plattform/SandboxMock";
 import { StandarderSeksjon } from "@/components/plattform/StandarderSeksjon";
 
 export const metadata: Metadata = {
-  title: "Plattform",
+  title: "Teknologi",
   description:
-    "nrki som åpen hub for kunstig intelligens i Norge — modellagnostisk, basert på MCP og åpne datakontrakter, designet for offentlig sektor.",
+    "Hvordan nrki er bygget — modellagnostisk hub basert på MCP og åpne datakontrakter, designet for offentlig sektor.",
 };
 
-export default function PlattformPage() {
+export default function TeknologiPage() {
   return (
     <>
       <Disclaimer />
@@ -59,7 +59,7 @@ function Hero() {
       <div className="px-4 pt-20 pb-20 sm:px-6 sm:pt-24 sm:pb-24">
         <p className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           <span className="inline-block h-2 w-2 bg-accent" aria-hidden />
-          Plattform
+          Teknologi
         </p>
         <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
           En åpen hub for kunstig intelligens i Norge.
@@ -99,7 +99,7 @@ function Bidra() {
           Vi trenger pilotetater, kommuner og fagpersoner.
         </h2>
         <p className="mt-4 max-w-3xl text-lg text-muted">
-          Plattformen er ikke realisert ennå. Den er en åpen invitasjon. Hvis
+          Teknologien er ikke realisert ennå. Den er en åpen invitasjon. Hvis
           du er i en etat eller kommune som vil være pilot, eller en
           fagperson som vil bidra med kompetanse innen modellevaluering,
           datakontrakter, MCP-implementasjoner eller juridiske rammer — ta

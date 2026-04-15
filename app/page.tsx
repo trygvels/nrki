@@ -20,7 +20,7 @@ export default function Home() {
         <HvorforNrki />
         <Prinsipper />
         <OffentligData />
-        <PlattformTease />
+        <TeknologiTease />
         <section className="border-b border-border" id="demo">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
@@ -54,7 +54,7 @@ export default function Home() {
   );
 }
 
-function PlattformTease() {
+function TeknologiTease() {
   return (
     <section className="border-b border-border bg-foreground text-background">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
@@ -64,7 +64,7 @@ function PlattformTease() {
               Mer enn en chatbot
             </p>
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              nrki er også en åpen plattform for KI i offentlig sektor.
+              nrki er også en åpen teknologi-hub for KI i offentlig sektor.
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-background/70">
               Modellagnostisk hub bygget på MCP. Norsk-hostede modeller for
@@ -74,10 +74,10 @@ function PlattformTease() {
           </div>
           <div className="flex md:justify-end">
             <Link
-              href="/plattform"
+              href="/teknologi"
               className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
             >
-              Les om plattformen →
+              Les om teknologien →
             </Link>
           </div>
         </div>
