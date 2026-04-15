@@ -33,8 +33,8 @@ export function StandarderSeksjon() {
               MCP — Model Context Protocol
             </h3>
             <p className="mt-3 text-muted">
-              MCP er en åpen standard for hvordan AI-applikasjoner kobler seg
-              til datakilder, verktøy og arbeidsflyter. Tenk «USB-C for AI».
+              MCP er en åpen standard for hvordan KI-applikasjoner kobler seg
+              til datakilder, verktøy og arbeidsflyter. Tenk «USB-C for KI».
               Etater registrerer en MCP-server, og nrki kan slå opp i den uten
               skreddersydd integrasjon.
             </p>

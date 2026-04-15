@@ -13,7 +13,7 @@ I dag løses dette ofte med:
   000 kr per måned
 - ingenting
 
-nrki kan tilby et fjerde alternativ: en innbygger-AI som er gratis,
+nrki kan tilby et fjerde alternativ: en innbygger-KI som er gratis,
 forhåndsskreddersydd til kommunens egne sider, og som kan embeddes på
 kommunens nettside med én linje kode.
 

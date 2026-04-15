@@ -14,7 +14,7 @@ export function Hero() {
           for alle i Norge.
         </h1>
         <p className="mt-8 max-w-2xl text-xl text-muted sm:text-2xl">
-          Trygg. Upartisk. Offentlig. Et forslag til en AI-tjeneste som alle i
+          Trygg. Upartisk. Offentlig. Et forslag til en KI-tjeneste som alle i
           Norge kan stole på — slik NRK er for nyhetene.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">

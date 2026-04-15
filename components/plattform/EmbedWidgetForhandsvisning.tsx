@@ -57,7 +57,7 @@ export function EmbedWidgetForhandsvisning() {
           </h3>
           <p className="mt-3 text-sm text-sky-950/70">
             Tjenester, åpningstider, kontakt — eller still spørsmål til vår
-            innbygger-AI. Svarer på norsk, basert på kommunens egne sider.
+            innbygger-KI. Svarer på norsk, basert på kommunens egne sider.
           </p>
           <p className="mt-4 text-xs text-sky-950/50">
             (Mock-side. Den faktiske kommunen er ikke tilknyttet nrki.)

@@ -14,7 +14,7 @@ export function Footer() {
           </div>
           <p className="mt-4 max-w-sm text-sm text-muted">
             Et privat konseptforslag til hvordan en offentlig norsk
-            AI-tjeneste kunne sett ut. <strong>Ikke tilknyttet NRK eller
+            KI-tjeneste kunne sett ut. <strong>Ikke tilknyttet NRK eller
             den norske stat.</strong> Eventuelle likheter med offisielle
             tjenester er bevisste, men kun illustrative.
           </p>

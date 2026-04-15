@@ -27,7 +27,7 @@ const prinsipper = [
   {
     tittel: "Gratis for alle",
     beskrivelse:
-      "Tilgjengelig for alle som bor i Norge, uten betalingsmur. AI skal ikke bli et nytt digitalt klasseskille.",
+      "Tilgjengelig for alle som bor i Norge, uten betalingsmur. KI skal ikke bli et nytt digitalt klasseskille.",
   },
 ];
 
@@ -45,7 +45,7 @@ export function Prinsipper() {
           <p className="mt-4 text-lg text-muted">
             Disse prinsippene er ikke markedsføring — de er tekniske og
             organisatoriske krav tjenesten må innfri for å kunne kalles en
-            allmenn AI-tjeneste.
+            allmenn KI-tjeneste.
           </p>
         </div>
         <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">

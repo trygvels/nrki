@@ -1,6 +1,6 @@
 # nrki — Norsk Riks-KI
 
-> Et forslag om en norsk offentlig, trygg og upartisk AI-tjeneste for alle i
+> Et forslag om en norsk offentlig, trygg og upartisk KI-tjeneste for alle i
 > Norge — inspirert av NRKs rolle for allmennkringkasting.
 
 Dette repoet inneholder konseptforslag og en landingsside for **nrki**. Siden
@@ -8,9 +8,9 @@ er publisert på [nrki.no](https://nrki.no).
 
 ## Kort sagt
 
-- AI er i ferd med å bli infrastruktur — på linje med strøm og internett.
-- I dag er de mest brukte AI-tjenestene eid av private, utenlandske selskaper.
-- Nordmenn fortjener en AI-tjeneste som er trygg, upartisk, offentlig eid,
+- KI er i ferd med å bli infrastruktur — på linje med strøm og internett.
+- I dag er de mest brukte KI-tjenestene eid av private, utenlandske selskaper.
+- Nordmenn fortjener en KI-tjeneste som er trygg, upartisk, offentlig eid,
   forankret i verifiserte norske kilder — og gratis for alle i Norge.
 - Slik NRK er for nyhetene, kan nrki være for kunstig intelligens.
 
@@ -18,7 +18,7 @@ er publisert på [nrki.no](https://nrki.no).
 
 nrki er beskrevet på to plan:
 
-1. **Den allmenne AI-tjenesten** — `/` og `/om`. NRK-parallellen, ment for
+1. **Den allmenne KI-tjenesten** — `/` og `/om`. NRK-parallellen, ment for
    innbyggeren. Trygg, upartisk, gratis, offentlig.
 2. **Plattformen** — `/plattform`. Den utvidede pitchen: nrki som åpen
    hub for KI i norsk offentlig sektor. Modellagnostisk, MCP-basert,

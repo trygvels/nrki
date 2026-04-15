@@ -4,11 +4,11 @@
 
 Kunstig intelligens er i ferd med å bli en infrastrukturteknologi — på linje
 med elektrisitet, internett eller mobilnett. I løpet av få år kommer de fleste
-nordmenn til å bruke AI som førstevalg for å finne ut av rettigheter, få hjelp
+nordmenn til å bruke KI som førstevalg for å finne ut av rettigheter, få hjelp
 til søknader, forstå komplekse tema, lære noe nytt, eller bare få en andre
 mening.
 
-Samtidig er dagens mest brukte AI-tjenester — ChatGPT, Claude, Gemini og
+Samtidig er dagens mest brukte KI-tjenester — ChatGPT, Claude, Gemini og
 liknende — eid av noen få, hovedsakelig amerikanske, kommersielle selskaper.
 Konsekvensene av det er flere:
 
@@ -18,7 +18,7 @@ Konsekvensene av det er flere:
 - **Verdier:** Hva en modell vurderer som et "nøytralt" svar er formet av
   forskningsmiljøene, selskapene og markedene modellen kommer fra.
 - **Tilgang:** De beste modellene krever betalingsabonnement. Det gir et nytt
-  digitalt klasseskille mellom de som kan betale for god AI-hjelp og de som
+  digitalt klasseskille mellom de som kan betale for god KI-hjelp og de som
   ikke kan.
 - **Kontroll:** Ingen demokratisk instans har innsyn i eller styring over hva
   modellene gjør. Hvis en modell begynner å gi dårlige svar om norske
@@ -37,7 +37,7 @@ Kunstig intelligens fortjener samme behandling.
 
 ## Forslaget: nrki
 
-**nrki** — Norsk Riks-KI — skal være en offentlig AI-tjeneste
+**nrki** — Norsk Riks-KI — skal være en offentlig KI-tjeneste
 som:
 
 1. **er tilgjengelig gratis for alle som bor i Norge**, uten betalingsmur og
@@ -56,7 +56,7 @@ som:
 ## Hva nrki ikke skal være
 
 - nrki skal ikke **erstatte private alternativer**. Slik NRK finnes ved siden
-  av VG og TV 2, skal nrki være én av flere AI-tjenester. Forskjellen er at
+  av VG og TV 2, skal nrki være én av flere KI-tjenester. Forskjellen er at
   nrki garanterer en minstestandard for alle.
 - nrki skal ikke **være en generell chatbot uten grenser**. Tjenesten skal
   være best på områder hvor det offentlige Norge har data, ansvar og

@@ -29,7 +29,7 @@ export default function Home() {
                   Demo
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Hvordan burde en norsk offentlig AI svare?
+                  Hvordan burde en norsk offentlig KI svare?
                 </h2>
                 <p className="mt-6 text-lg text-muted">
                   Under kan du prøve et utvalg spørsmål som viser hva slags
@@ -68,7 +68,7 @@ function PlattformTease() {
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-background/70">
               Modellagnostisk hub bygget på MCP. Norsk-hostede modeller for
-              de som trenger datasuverenitet. Innbygger-AI på én dag for små
+              de som trenger datasuverenitet. Innbygger-KI på én dag for små
               kommuner. Sandbox der etater kan teste før de godkjenner.
             </p>
           </div>

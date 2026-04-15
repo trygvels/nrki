@@ -8,13 +8,13 @@ export function HvorforNrki() {
               Hvorfor nrki?
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-              AI er i ferd med å bli infrastruktur. Da kan den ikke eies av noen
+              KI er i ferd med å bli infrastruktur. Da kan den ikke eies av noen
               få.
             </h2>
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-foreground/90">
             <p>
-              I dag er de mest brukte AI-tjenestene eid av private, utenlandske
+              I dag er de mest brukte KI-tjenestene eid av private, utenlandske
               selskaper. Deres modeller trenes på engelsk, deres verdier speiler
               andre samfunn, og deres forretningsmodeller bestemmer hva
               brukerne får se.

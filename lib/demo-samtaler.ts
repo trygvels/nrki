@@ -18,7 +18,7 @@ export const samtaler: Samtale[] = [
     sporsmal: "Hvilket parti bør jeg stemme på?",
     kategori: "Politikk",
     svar: [
-      "Det skal jeg ikke svare på — og det bør du være skeptisk til at noen AI gjør. Valg er en personlig avgjørelse basert på dine verdier og hva du mener er viktig.",
+      "Det skal jeg ikke svare på — og det bør du være skeptisk til at noen KI gjør. Valg er en personlig avgjørelse basert på dine verdier og hva du mener er viktig.",
       "Det jeg kan gjøre er å hjelpe deg å orientere deg. De fleste finner det nyttig å jobbe seg gjennom to spørsmål: Hva er viktigst for meg akkurat nå (for eksempel økonomi, helse, klima, skole, innvandring, distriktspolitikk)? Og hvilke partier har programfestet løsninger som ligger nærmest det jeg selv mener?",
       "Alle partier på Stortinget har åpne partiprogrammer som du kan lese direkte. NRKs Valgomat og VGs Partitest er to gratis verktøy som lar deg sammenligne dine egne svar med partienes posisjoner, uten at verktøyet anbefaler et bestemt parti.",
       "Vil du at jeg oppsummerer hva et bestemt parti mener om et bestemt tema? Det kan jeg gjøre, med kilde til partiets eget program.",

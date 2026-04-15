@@ -14,7 +14,7 @@ veiledning, særlig på helse, økonomi, rettigheter og psykisk helse.
   rådgivning, utarbeidet sammen med Helsedirektoratet, Forbrukerrådet og
   andre relevante etater.
 - Klar henvisning til riktig instans (fastlege, NAV-veileder, advokat, 113)
-  der AI-svar ikke er forsvarlig.
+  der KI-svar ikke er forsvarlig.
 
 ## 2. Upartisk
 

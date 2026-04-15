@@ -46,7 +46,7 @@ export function KommuneBestillingsflyt() {
           For småkommuner
         </p>
         <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          Innbygger-AI på én dag.
+          Innbygger-KI på én dag.
         </h2>
         <p className="mt-4 max-w-3xl text-lg text-muted">
           800 av Norges 357 kommuner har under 10 000 innbyggere. De har

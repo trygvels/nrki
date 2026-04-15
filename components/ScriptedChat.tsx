@@ -77,11 +77,11 @@ export function ScriptedChat() {
           <div className="m-auto max-w-sm text-center text-sm text-muted">
             <p>
               Dette er en demo. Velg et spørsmål nedenfor for å se hvordan en
-              offentlig AI-tjeneste kunne svart — med kilder, nyanser og uten
+              offentlig KI-tjeneste kunne svart — med kilder, nyanser og uten
               politisk slagside.
             </p>
             <p className="mt-3 text-xs">
-              Ingen ekte AI-kall skjer. Svarene er kuraterte eksempler.
+              Ingen ekte KI-kall skjer. Svarene er kuraterte eksempler.
             </p>
           </div>
         )}

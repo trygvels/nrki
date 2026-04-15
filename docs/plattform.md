@@ -1,6 +1,6 @@
 # Plattform: nrki som åpen hub for KI i Norge
 
-Den opprinnelige nrki-pitchen handlet om én ting: en allmenn AI-tjeneste for
+Den opprinnelige nrki-pitchen handlet om én ting: en allmenn KI-tjeneste for
 innbyggere, slik NRK er for nyheter. Dette dokumentet utvider konseptet til
 en åpen **plattform** — en hub som kobler norske data, modeller og brukere
 sammen på åpne, demokratisk styrte vilkår.
@@ -74,7 +74,7 @@ modellene faktisk svarer på deres innhold.
 ## For småkommuner
 
 800 av Norges 357 kommuner har under 10 000 innbyggere. De har sjelden egen
-IT-utvikling. nrki skal kunne tilby dem en innbygger-AI som er
+IT-utvikling. nrki skal kunne tilby dem en innbygger-KI som er
 forhåndsskreddersydd til deres kommune, gratis, og som kan embeddes på
 deres nettside med én linje JavaScript:
 

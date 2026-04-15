@@ -7,7 +7,7 @@ import { ScriptedChat } from "@/components/ScriptedChat";
 export const metadata: Metadata = {
   title: "Demo",
   description:
-    "Prøv et utvalg spørsmål for å se hvordan en offentlig norsk AI-tjeneste kunne svart.",
+    "Prøv et utvalg spørsmål for å se hvordan en offentlig norsk KI-tjeneste kunne svart.",
 };
 
 export default function DemoPage() {
@@ -22,11 +22,11 @@ export default function DemoPage() {
               Demo
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-              Slik burde en norsk offentlig AI høres ut.
+              Slik burde en norsk offentlig KI høres ut.
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted">
               Velg et spørsmål for å se et kuratert eksempelsvar. Dette er ikke
-              ekte AI — det er en illustrasjon av tonen, nyanseringen og
+              ekte KI — det er en illustrasjon av tonen, nyanseringen og
               kildebruken nrki må holde for å være en troverdig offentlig
               tjeneste.
             </p>
@@ -39,7 +39,7 @@ export default function DemoPage() {
                   Hvorfor kuratert?
                 </div>
                 <p className="mt-1">
-                  En ekte, offentlig norsk AI vil ikke fungere skikkelig før
+                  En ekte, offentlig norsk KI vil ikke fungere skikkelig før
                   modellen, datagrunnlaget og evalueringen er på plass. Denne
                   demoen viser kravene vi bør stille — så kan teknologien bygges
                   til å møte dem.

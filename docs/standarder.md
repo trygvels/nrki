@@ -7,7 +7,7 @@ ikke gjør det.
 ## MCP — Model Context Protocol
 
 [MCP](https://modelcontextprotocol.io) er en åpen standard for hvordan
-AI-applikasjoner kobler seg til datakilder, verktøy og arbeidsflyter.
+KI-applikasjoner kobler seg til datakilder, verktøy og arbeidsflyter.
 nrki bruker MCP som hovedstandard for hvordan offentlige etater
 eksponerer sine data.
 

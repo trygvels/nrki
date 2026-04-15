@@ -7,7 +7,7 @@ import { Nav } from "@/components/Nav";
 export const metadata: Metadata = {
   title: "Om nrki",
   description:
-    "Bakgrunn, visjon og prinsipper for nrki — forslaget om en norsk offentlig AI-tjeneste.",
+    "Bakgrunn, visjon og prinsipper for nrki — forslaget om en norsk offentlig KI-tjeneste.",
 };
 
 export default function OmPage() {
@@ -21,14 +21,14 @@ export default function OmPage() {
             Om nrki
           </p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            Et forslag om en norsk offentlig AI.
+            Et forslag om en norsk offentlig KI.
           </h1>
 
           <div className="prose prose-neutral mt-12 max-w-none space-y-6 text-lg leading-relaxed">
             <p>
               <strong>nrki</strong> — Norsk Riks-KI — er et
               forslag om at den norske staten skal etablere en offentlig,
-              gratis, trygg og upartisk AI-tjeneste tilgjengelig for alle som
+              gratis, trygg og upartisk KI-tjeneste tilgjengelig for alle som
               bor i Norge. Navnet og ideen er inspirert av{" "}
               <strong>NRK</strong> (Norsk rikskringkasting), som siden 1933 har
               sikret at alle i Norge har tilgang til nyheter og
@@ -41,7 +41,7 @@ export default function OmPage() {
             <p>
               Kunstig intelligens er i rask ferd med å bli en
               infrastrukturteknologi — på linje med elektrisitet, internett
-              eller mobilnett. I dag er de mest brukte AI-tjenestene eid av
+              eller mobilnett. I dag er de mest brukte KI-tjenestene eid av
               noen få, hovedsakelig amerikanske, selskaper. Modellene er
               optimalisert for engelsk, forretningsmodellen deres er
               betalingsabonnement, og de har ingen særlig plikt til å forholde
@@ -53,7 +53,7 @@ export default function OmPage() {
               teknisk. Når en teknologi blir så kraftig og så vanlig, og så
               samtidig er gatekept av private aktører, blir tilgangen til god
               informasjon og gode verktøy ujevn. De med penger får bedre
-              AI-hjelp enn de uten. De som er komfortable på engelsk får bedre
+              KI-hjelp enn de uten. De som er komfortable på engelsk får bedre
               svar enn de som ikke er det. Og svarene i seg selv bærer verdier
               og antakelser fra andre samfunn.
             </p>
@@ -62,14 +62,14 @@ export default function OmPage() {
               Hva er nrki?
             </h2>
             <p>
-              nrki skal være en allmenn AI-tjeneste som nordmenn kan stole på —
+              nrki skal være en allmenn KI-tjeneste som nordmenn kan stole på —
               slik mange stoler på NRK for nyheter, Kartverket for kart,
               Altinn for dialog med det offentlige, eller Lånekassen for
               studiestøtte. Konkret betyr det:
             </p>
             <ul className="list-disc space-y-2 pl-6">
               <li>
-                En AI-modell trent eller tunet for norsk språk, norske
+                En KI-modell trent eller tunet for norsk språk, norske
                 offentlige kilder og norsk samfunnsforståelse.
               </li>
               <li>
@@ -95,7 +95,7 @@ export default function OmPage() {
             </h2>
             <p>
               nrki skal ikke konkurrere ut private aktører. Kommersielle
-              AI-tjenester vil fortsatt ha sin plass, som alternativer for de
+              KI-tjenester vil fortsatt ha sin plass, som alternativer for de
               som ønsker det. nrki skal være <em>grunnlinjen</em> — den alle
               skal ha tilgang til. På samme måte som NRK ikke erstatter VG,
               men finnes ved siden av dem og holder en minstestandard for
