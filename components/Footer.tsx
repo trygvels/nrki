@@ -10,7 +10,7 @@ export function Footer() {
             <span className="text-lg">nrki</span>
           </div>
           <p className="mt-3 max-w-sm text-sm text-muted">
-            Norsk Riks Kunstig Intelligens — et konseptforslag til en offentlig
+            Norsk Riks-KI — et konseptforslag til en offentlig
             AI-tjeneste for alle i Norge. Ikke en offisiell statlig tjeneste.
           </p>
         </div>

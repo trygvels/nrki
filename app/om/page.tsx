@@ -26,7 +26,7 @@ export default function OmPage() {
 
           <div className="prose prose-neutral mt-12 max-w-none space-y-6 text-lg leading-relaxed">
             <p>
-              <strong>nrki</strong> — Norsk Riks Kunstig Intelligens — er et
+              <strong>nrki</strong> — Norsk Riks-KI — er et
               forslag om at den norske staten skal etablere en offentlig,
               gratis, trygg og upartisk AI-tjeneste tilgjengelig for alle som
               bor i Norge. Navnet og ideen er inspirert av{" "}

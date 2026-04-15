@@ -37,7 +37,7 @@ Kunstig intelligens fortjener samme behandling.
 
 ## Forslaget: nrki
 
-**nrki** — Norsk Riks Kunstig Intelligens — skal være en offentlig AI-tjeneste
+**nrki** — Norsk Riks-KI — skal være en offentlig AI-tjeneste
 som:
 
 1. **er tilgjengelig gratis for alle som bor i Norge**, uten betalingsmur og

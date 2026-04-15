@@ -1,4 +1,4 @@
-# nrki — Norsk Riks Kunstig Intelligens
+# nrki — Norsk Riks-KI
 
 > Et forslag om en norsk offentlig, trygg og upartisk AI-tjeneste for alle i
 > Norge — inspirert av NRKs rolle for allmennkringkasting.

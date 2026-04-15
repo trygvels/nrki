@@ -11,13 +11,13 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nrki.no"),
   title: {
-    default: "nrki — Norsk Riks Kunstig Intelligens",
+    default: "nrki — Norsk Riks-KI",
     template: "%s — nrki",
   },
   description:
     "Et forslag til en offentlig, trygg og upartisk kunstig intelligens for alle i Norge — inspirert av NRKs rolle for allmennkringkasting.",
   openGraph: {
-    title: "nrki — Norsk Riks Kunstig Intelligens",
+    title: "nrki — Norsk Riks-KI",
     description:
       "Et forslag til en offentlig, trygg og upartisk kunstig intelligens for alle i Norge.",
     locale: "nb_NO",
