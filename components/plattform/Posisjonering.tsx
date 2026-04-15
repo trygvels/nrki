@@ -1,60 +1,84 @@
+type Verdi = {
+  type?: "positiv" | "negativ" | "advarsel" | "noeytral";
+  tekst: string;
+};
+
 type Rad = {
   dimensjon: string;
-  kommersiell: string;
-  nrki: string;
-  vinner: "kommersiell" | "nrki" | "lik";
+  kommersiell: Verdi;
+  nrki: Verdi;
 };
 
 const rader: Rad[] = [
   {
     dimensjon: "Generell ytelse på frittstående oppgaver",
-    kommersiell: "Best i klassen",
-    nrki: "God nok",
-    vinner: "kommersiell",
+    kommersiell: { type: "positiv", tekst: "Best i klassen" },
+    nrki: { type: "noeytral", tekst: "God nok" },
   },
   {
     dimensjon: "Datasuverenitet (norsk/EU)",
-    kommersiell: "⚠ CLOUD Act",
-    nrki: "✓ Valgfritt",
-    vinner: "nrki",
+    kommersiell: { type: "advarsel", tekst: "CLOUD Act" },
+    nrki: { type: "positiv", tekst: "Valgfritt" },
   },
   {
     dimensjon: "Forankret i norsk offentlig data",
-    kommersiell: "Tilfeldig",
-    nrki: "✓ Standard",
-    vinner: "nrki",
+    kommersiell: { type: "noeytral", tekst: "Tilfeldig" },
+    nrki: { type: "positiv", tekst: "Standard" },
   },
   {
     dimensjon: "Modellvalg-styring for leverandør",
-    kommersiell: "✗",
-    nrki: "✓",
-    vinner: "nrki",
+    kommersiell: { type: "negativ", tekst: "" },
+    nrki: { type: "positiv", tekst: "" },
   },
   {
     dimensjon: "Demokratisk styring",
-    kommersiell: "✗",
-    nrki: "✓",
-    vinner: "nrki",
+    kommersiell: { type: "negativ", tekst: "" },
+    nrki: { type: "positiv", tekst: "" },
   },
   {
     dimensjon: "Pris for innbygger",
-    kommersiell: "Gratis / abo",
-    nrki: "Gratis",
-    vinner: "lik",
+    kommersiell: { type: "noeytral", tekst: "Gratis / abonnement" },
+    nrki: { type: "noeytral", tekst: "Gratis" },
   },
   {
     dimensjon: "Pris for liten kommune å ta i bruk",
-    kommersiell: "Tusenvis per måned",
-    nrki: "Gratis",
-    vinner: "nrki",
+    kommersiell: { type: "negativ", tekst: "Tusenvis per måned" },
+    nrki: { type: "positiv", tekst: "Gratis" },
   },
   {
     dimensjon: "Sertifisering for offentlig sektor",
-    kommersiell: "Begrenset",
-    nrki: "Standard",
-    vinner: "nrki",
+    kommersiell: { type: "noeytral", tekst: "Begrenset" },
+    nrki: { type: "positiv", tekst: "Standard" },
   },
 ];
+
+function Celle({ verdi }: { verdi: Verdi }) {
+  const { type = "noeytral", tekst } = verdi;
+  const ikon =
+    type === "positiv" ? (
+      <span className="text-emerald-300" aria-hidden>
+        ✓
+      </span>
+    ) : type === "negativ" ? (
+      <span className="text-background/40" aria-hidden>
+        ✗
+      </span>
+    ) : type === "advarsel" ? (
+      <span className="text-amber-300" aria-hidden>
+        ⚠
+      </span>
+    ) : null;
+
+  const tekstKlasse =
+    type === "noeytral" ? "text-background/70" : "text-background";
+
+  return (
+    <span className="inline-flex items-center gap-2">
+      {ikon}
+      {tekst && <span className={tekstKlasse}>{tekst}</span>}
+    </span>
+  );
+}
 
 export function Posisjonering() {
   return (
@@ -63,7 +87,7 @@ export function Posisjonering() {
       className="border-b border-border bg-foreground text-background scroll-mt-20"
     >
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
           Posisjonering
         </p>
         <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -92,19 +116,11 @@ export function Posisjonering() {
               {rader.map((r) => (
                 <tr key={r.dimensjon}>
                   <td className="px-5 py-3 font-medium">{r.dimensjon}</td>
-                  <td
-                    className={`px-5 py-3 ${
-                      r.vinner === "kommersiell" ? "font-semibold text-accent" : ""
-                    }`}
-                  >
-                    {r.kommersiell}
+                  <td className="px-5 py-3">
+                    <Celle verdi={r.kommersiell} />
                   </td>
-                  <td
-                    className={`px-5 py-3 ${
-                      r.vinner === "nrki" ? "font-semibold text-accent" : ""
-                    }`}
-                  >
-                    {r.nrki}
+                  <td className="px-5 py-3">
+                    <Celle verdi={r.nrki} />
                   </td>
                 </tr>
               ))}
