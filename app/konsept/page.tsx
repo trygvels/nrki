@@ -15,6 +15,7 @@ import {
 import { Posisjonering } from "@/components/plattform/Posisjonering";
 import { SandboxMock } from "@/components/plattform/SandboxMock";
 import { StandarderSeksjon } from "@/components/plattform/StandarderSeksjon";
+import { Tverretatlig } from "@/components/plattform/Tverretatlig";
 
 export const metadata: Metadata = {
   title: "Konsept",
@@ -36,6 +37,7 @@ export default function KonseptPage() {
           <div>
             <Hero />
             <Prinsipper />
+            <Tverretatlig />
             <HubDiagram />
             <StandarderSeksjon />
             <ModellKatalog />

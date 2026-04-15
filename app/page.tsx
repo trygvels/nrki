@@ -59,15 +59,16 @@ function KonseptTease() {
         <div className="grid items-center gap-10 md:grid-cols-[2fr_1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Det fullstendige konseptet
+              Mer enn et grensesnitt
             </p>
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              Verdier, prinsipper, arkitektur og onboarding på ett sted.
+              nrki er åpen infrastruktur for datadeling — ikke bare en chat.
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-background/70">
-              Seks prinsipper tjenesten må bygges på. En modellagnostisk hub
-              basert på MCP. Sandbox for etater. Innbygger-KI på én dag for
-              små kommuner. Alt sammen i én leselig oversikt.
+              Innbyggerens spørsmål spenner sjelden bare én etat. Vi
+              kobler etater sammen via MCP, og hver komponent kan brukes
+              i nrki, i etatenes egne løsninger, eller av tredjeparter —
+              ikke bare i ett felles chatvindu.
             </p>
           </div>
           <div className="flex md:justify-end">
