@@ -1,22 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-
-const USERNAME = "nrki";
-const PASSWORD = "passord";
+import { AUTH_COOKIE, AUTH_COOKIE_VALUE } from "@/lib/auth";
 
 export function middleware(req: NextRequest) {
-  const auth = req.headers.get("authorization");
-  const expected = "Basic " + btoa(`${USERNAME}:${PASSWORD}`);
+  const path = req.nextUrl.pathname;
 
-  if (auth === expected) {
+  if (path.startsWith("/login")) {
     return NextResponse.next();
   }
 
-  return new NextResponse("Innlogging kreves.", {
-    status: 401,
-    headers: {
-      "WWW-Authenticate": 'Basic realm="nrki", charset="UTF-8"',
-    },
-  });
+  const cookie = req.cookies.get(AUTH_COOKIE);
+  if (cookie?.value === AUTH_COOKIE_VALUE) {
+    return NextResponse.next();
+  }
+
+  const url = req.nextUrl.clone();
+  url.pathname = "/login";
+  url.search = "";
+  return NextResponse.redirect(url);
 }
 
 export const config = {
