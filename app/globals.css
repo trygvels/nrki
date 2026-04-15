@@ -37,6 +37,7 @@ body {
     "Segoe UI", Roboto, sans-serif;
   font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 h1,
