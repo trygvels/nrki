@@ -8,13 +8,20 @@ import {
 } from "@/lib/kommune-demo-samtaler";
 import type { Samtale } from "@/lib/demo-samtaler";
 
-type Melding =
-  | { rolle: "bruker"; tekst: string }
-  | { rolle: "nrki"; samtale: Samtale };
+type NrkiMelding = {
+  rolle: "nrki";
+  avsnitt: string[];
+  kilder: Samtale["kilder"];
+  merknad?: string;
+  ferdig: boolean;
+};
+
+type Melding = { rolle: "bruker"; tekst: string } | NrkiMelding;
 
 export function EmbedWidgetForhandsvisning() {
   const [meldinger, setMeldinger] = useState<Melding[]>([]);
   const [skriver, setSkriver] = useState(false);
+  const [opptatt, setOpptatt] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,12 +31,49 @@ export function EmbedWidgetForhandsvisning() {
   }, [meldinger, skriver]);
 
   const stillSporsmal = async (samtale: Samtale) => {
-    if (skriver) return;
+    if (opptatt) return;
+    setOpptatt(true);
     setMeldinger((m) => [...m, { rolle: "bruker", tekst: samtale.sporsmal }]);
     setSkriver(true);
-    await new Promise((r) => setTimeout(r, 550));
+    await sov(450);
     setSkriver(false);
-    setMeldinger((m) => [...m, { rolle: "nrki", samtale }]);
+
+    setMeldinger((m) => [
+      ...m,
+      { rolle: "nrki", avsnitt: [], kilder: [], ferdig: false },
+    ]);
+
+    for (let p = 0; p < samtale.svar.length; p++) {
+      const ord = samtale.svar[p].split(" ");
+      let progressiv = "";
+      for (let w = 0; w < ord.length; w++) {
+        progressiv += (w === 0 ? "" : " ") + ord[w];
+        const snapshot = progressiv;
+        setMeldinger((prev) =>
+          oppdaterSiste(prev, (siste) => ({
+            ...siste,
+            avsnitt: [...siste.avsnitt.slice(0, p), snapshot],
+          })),
+        );
+        await sov(18 + Math.random() * 22);
+      }
+      await sov(100);
+    }
+
+    setMeldinger((prev) =>
+      oppdaterSiste(prev, (siste) => ({
+        ...siste,
+        kilder: samtale.kilder,
+        merknad: samtale.merknad,
+        ferdig: true,
+      })),
+    );
+    setOpptatt(false);
+  };
+
+  const nullstill = () => {
+    if (opptatt) return;
+    setMeldinger([]);
   };
 
   return (
@@ -75,8 +119,8 @@ export function EmbedWidgetForhandsvisning() {
             </div>
             {meldinger.length > 0 && (
               <button
-                onClick={() => setMeldinger([])}
-                disabled={skriver}
+                onClick={nullstill}
+                disabled={opptatt}
                 className="text-[10px] text-muted hover:text-foreground disabled:opacity-40"
               >
                 Start på nytt
@@ -106,13 +150,18 @@ export function EmbedWidgetForhandsvisning() {
                 <div key={i} className="flex justify-start">
                   <div className="max-w-[90%] border border-border bg-subtle px-3 py-2 text-xs">
                     <div className="space-y-2 leading-relaxed">
-                      {m.samtale.svar.map((a, j) => (
-                        <p key={j}>{a}</p>
+                      {m.avsnitt.map((a, j) => (
+                        <p key={j}>
+                          {a}
+                          {!m.ferdig && j === m.avsnitt.length - 1 && (
+                            <span className="ml-0.5 inline-block h-3 w-1 translate-y-0.5 animate-pulse bg-accent" />
+                          )}
+                        </p>
                       ))}
                     </div>
-                    {m.samtale.kilder.length > 0 && (
+                    {m.ferdig && m.kilder.length > 0 && (
                       <div className="mt-2 border-t border-border pt-2 text-[10px]">
-                        {m.samtale.kilder.map((k) => (
+                        {m.kilder.map((k) => (
                           <a
                             key={k.url}
                             href={k.url}
@@ -125,9 +174,9 @@ export function EmbedWidgetForhandsvisning() {
                         ))}
                       </div>
                     )}
-                    {m.samtale.merknad && (
+                    {m.ferdig && m.merknad && (
                       <p className="mt-2 bg-background px-2 py-1 text-[10px] italic text-muted">
-                        {m.samtale.merknad}
+                        {m.merknad}
                       </p>
                     )}
                   </div>
@@ -156,7 +205,7 @@ export function EmbedWidgetForhandsvisning() {
                 <button
                   key={s.id}
                   onClick={() => stillSporsmal(s)}
-                  disabled={skriver}
+                  disabled={opptatt}
                   className="border border-border bg-background px-2.5 py-1 text-[11px] hover:border-foreground disabled:opacity-50"
                 >
                   {s.sporsmal}
@@ -168,4 +217,23 @@ export function EmbedWidgetForhandsvisning() {
       </div>
     </div>
   );
+}
+
+function sov(ms: number) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function oppdaterSiste(
+  meldinger: Melding[],
+  oppdater: (m: NrkiMelding) => NrkiMelding,
+): Melding[] {
+  const ut = [...meldinger];
+  for (let i = ut.length - 1; i >= 0; i--) {
+    const m = ut[i];
+    if (m.rolle === "nrki") {
+      ut[i] = oppdater(m);
+      break;
+    }
+  }
+  return ut;
 }

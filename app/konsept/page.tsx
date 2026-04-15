@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Disclaimer } from "@/components/Disclaimer";
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { Prinsipper } from "@/components/Prinsipper";
 import { AktorOnboarding } from "@/components/plattform/AktorOnboarding";
 import { HubDiagram } from "@/components/plattform/HubDiagram";
 import { KommuneBestillingsflyt } from "@/components/plattform/KommuneBestillingsflyt";
@@ -16,12 +17,12 @@ import { SandboxMock } from "@/components/plattform/SandboxMock";
 import { StandarderSeksjon } from "@/components/plattform/StandarderSeksjon";
 
 export const metadata: Metadata = {
-  title: "Teknologi",
+  title: "Konsept",
   description:
-    "Hvordan nrki er bygget — modellagnostisk hub basert på MCP og åpne datakontrakter, designet for offentlig sektor.",
+    "Det fullstendige nrki-konseptet — verdier, prinsipper, teknisk arkitektur, modellkatalog og hvordan offentlige aktører kobles på.",
 };
 
-export default function TeknologiPage() {
+export default function KonseptPage() {
   return (
     <>
       <Disclaimer />
@@ -34,6 +35,7 @@ export default function TeknologiPage() {
           </aside>
           <div>
             <Hero />
+            <Prinsipper />
             <HubDiagram />
             <StandarderSeksjon />
             <ModellKatalog />
@@ -59,28 +61,29 @@ function Hero() {
       <div className="px-4 pt-20 pb-20 sm:px-6 sm:pt-24 sm:pb-24">
         <p className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           <span className="inline-block h-2 w-2 bg-accent" aria-hidden />
-          Teknologi
+          Konseptet i sin helhet
         </p>
         <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-          En åpen hub for kunstig intelligens i Norge.
+          Hva nrki skal være, og hvordan det er bygget.
         </h1>
         <p className="mt-8 max-w-3xl text-lg text-muted sm:text-xl">
-          Vi konkurrerer ikke med ChatGPT, Claude eller Gemini på ytelse. Vi
-          er tillitslaget under dem — en plattform der norske data, modeller
-          og brukere møtes på åpne, demokratisk styrte vilkår.
+          Verdier, tekniske prinsipper, modellkatalog og onboarding samlet på
+          ett sted. Vi konkurrerer ikke med ChatGPT, Claude eller Gemini på
+          ytelse — vi er tillitslaget under dem, en plattform der norske data,
+          modeller og brukere møtes på åpne, demokratisk styrte vilkår.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href="#arkitektur"
+            href="#prinsipper"
             className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink hover:brightness-110"
           >
             Les hele konseptet ↓
           </a>
           <Link
-            href="/om"
+            href="/demo"
             className="inline-flex h-12 items-center border border-border bg-background px-6 text-sm font-semibold transition hover:border-foreground"
           >
-            Les hovedvisjonen
+            Prøv demoen
           </Link>
         </div>
       </div>
@@ -99,11 +102,10 @@ function Bidra() {
           Vi trenger pilotetater, kommuner og fagpersoner.
         </h2>
         <p className="mt-4 max-w-3xl text-lg text-muted">
-          Teknologien er ikke realisert ennå. Den er en åpen invitasjon. Hvis
-          du er i en etat eller kommune som vil være pilot, eller en
-          fagperson som vil bidra med kompetanse innen modellevaluering,
-          datakontrakter, MCP-implementasjoner eller juridiske rammer — ta
-          kontakt.
+          Konseptet er ikke realisert ennå. Det er en åpen invitasjon. Hvis du
+          er i en etat eller kommune som vil være pilot, eller en fagperson
+          som vil bidra med kompetanse innen modellevaluering, datakontrakter,
+          MCP-implementasjoner eller juridiske rammer — ta kontakt.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a

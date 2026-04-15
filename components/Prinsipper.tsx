@@ -33,7 +33,10 @@ const prinsipper = [
 
 export function Prinsipper() {
   return (
-    <section className="border-b border-border bg-subtle" id="prinsipper">
+    <section
+      id="prinsipper"
+      className="border-b border-border bg-subtle scroll-mt-20"
+    >
       <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">

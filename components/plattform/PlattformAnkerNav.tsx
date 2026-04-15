@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const seksjoner = [
   { id: "intro", tittel: "Intro" },
+  { id: "prinsipper", tittel: "Prinsipper" },
   { id: "arkitektur", tittel: "Arkitektur" },
   { id: "standarder", tittel: "Standarder" },
   { id: "modeller", tittel: "Modeller" },

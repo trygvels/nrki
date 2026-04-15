@@ -5,8 +5,7 @@ import Link from "next/link";
 import { Logo } from "@/components/Logo";
 
 const lenker = [
-  { href: "/teknologi", tekst: "Teknologi" },
-  { href: "/#prinsipper", tekst: "Prinsipper" },
+  { href: "/konsept", tekst: "Konsept" },
   { href: "/demo", tekst: "Demo" },
   { href: "/om", tekst: "Om" },
   {

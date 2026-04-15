@@ -28,8 +28,8 @@ export function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/teknologi" className="hover:text-accent">
-                Teknologi
+              <Link href="/konsept" className="hover:text-accent">
+                Konsept
               </Link>
             </li>
             <li>

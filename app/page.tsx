@@ -6,7 +6,6 @@ import { HvorforNrki } from "@/components/HvorforNrki";
 import { Kontakt } from "@/components/Kontakt";
 import { Nav } from "@/components/Nav";
 import { OffentligData } from "@/components/OffentligData";
-import { Prinsipper } from "@/components/Prinsipper";
 import { SammenligningNRK } from "@/components/SammenligningNRK";
 import { ScriptedChat } from "@/components/ScriptedChat";
 
@@ -18,9 +17,8 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <HvorforNrki />
-        <Prinsipper />
         <OffentligData />
-        <TeknologiTease />
+        <KonseptTease />
         <section className="border-b border-border" id="demo">
           <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
             <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
@@ -54,30 +52,30 @@ export default function Home() {
   );
 }
 
-function TeknologiTease() {
+function KonseptTease() {
   return (
     <section className="border-b border-border bg-foreground text-background">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <div className="grid items-center gap-10 md:grid-cols-[2fr_1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Mer enn en chatbot
+              Det fullstendige konseptet
             </p>
             <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              nrki er også en åpen teknologi-hub for KI i offentlig sektor.
+              Verdier, prinsipper, arkitektur og onboarding på ett sted.
             </h2>
             <p className="mt-4 max-w-2xl text-lg text-background/70">
-              Modellagnostisk hub bygget på MCP. Norsk-hostede modeller for
-              de som trenger datasuverenitet. Innbygger-KI på én dag for små
-              kommuner. Sandbox der etater kan teste før de godkjenner.
+              Seks prinsipper tjenesten må bygges på. En modellagnostisk hub
+              basert på MCP. Sandbox for etater. Innbygger-KI på én dag for
+              små kommuner. Alt sammen i én leselig oversikt.
             </p>
           </div>
           <div className="flex md:justify-end">
             <Link
-              href="/teknologi"
+              href="/konsept"
               className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
             >
-              Les om teknologien →
+              Les hele konseptet →
             </Link>
           </div>
         </div>

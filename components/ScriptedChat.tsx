@@ -3,19 +3,22 @@
 import { useEffect, useRef, useState } from "react";
 import { samtaler, type Samtale } from "@/lib/demo-samtaler";
 
-type Melding =
-  | { rolle: "bruker"; tekst: string }
-  | {
-      rolle: "nrki";
-      avsnitt: string[];
-      kilder: Samtale["kilder"];
-      merknad?: string;
-    };
+type NrkiMelding = {
+  rolle: "nrki";
+  avsnitt: string[];
+  totalAvsnitt: number;
+  kilder: Samtale["kilder"];
+  merknad?: string;
+  ferdig: boolean;
+};
+
+type Melding = { rolle: "bruker"; tekst: string } | NrkiMelding;
 
 export function ScriptedChat() {
   const [meldinger, setMeldinger] = useState<Melding[]>([]);
   const [aktivId, setAktivId] = useState<string | null>(null);
   const [skriver, setSkriver] = useState(false);
+  const [opptatt, setOpptatt] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,29 +28,56 @@ export function ScriptedChat() {
   }, [meldinger, skriver]);
 
   const stillSporsmal = async (samtale: Samtale) => {
-    if (skriver) return;
+    if (opptatt) return;
+    setOpptatt(true);
     setAktivId(samtale.id);
-    setMeldinger((m) => [
-      ...m,
-      { rolle: "bruker", tekst: samtale.sporsmal },
-    ]);
+    setMeldinger((m) => [...m, { rolle: "bruker", tekst: samtale.sporsmal }]);
     setSkriver(true);
-    // Kort pause for å simulere tenking
-    await new Promise((r) => setTimeout(r, 650));
+    await new Promise((r) => setTimeout(r, 500));
     setSkriver(false);
+
     setMeldinger((m) => [
       ...m,
       {
         rolle: "nrki",
-        avsnitt: samtale.svar,
-        kilder: samtale.kilder,
-        merknad: samtale.merknad,
+        avsnitt: [],
+        totalAvsnitt: samtale.svar.length,
+        kilder: [],
+        ferdig: false,
       },
     ]);
+
+    for (let p = 0; p < samtale.svar.length; p++) {
+      const ord = samtale.svar[p].split(" ");
+      let progressiv = "";
+      for (let w = 0; w < ord.length; w++) {
+        progressiv += (w === 0 ? "" : " ") + ord[w];
+        const snapshot = progressiv;
+        setMeldinger((prev) =>
+          oppdaterSiste(prev, (siste) => ({
+            ...siste,
+            avsnitt: [...siste.avsnitt.slice(0, p), snapshot],
+          })),
+        );
+        await sov(22 + Math.random() * 28);
+      }
+      // kort pause mellom avsnitt
+      await sov(120);
+    }
+
+    setMeldinger((prev) =>
+      oppdaterSiste(prev, (siste) => ({
+        ...siste,
+        kilder: samtale.kilder,
+        merknad: samtale.merknad,
+        ferdig: true,
+      })),
+    );
+    setOpptatt(false);
   };
 
   const nullstill = () => {
-    if (skriver) return;
+    if (opptatt) return;
     setMeldinger([]);
     setAktivId(null);
   };
@@ -61,7 +91,7 @@ export function ScriptedChat() {
         </div>
         <button
           onClick={nullstill}
-          disabled={skriver || meldinger.length === 0}
+          disabled={opptatt || meldinger.length === 0}
           className="text-xs text-muted hover:text-foreground disabled:opacity-40"
         >
           Start på nytt
@@ -102,10 +132,15 @@ export function ScriptedChat() {
                 </div>
                 <div className="space-y-3 leading-relaxed text-foreground">
                   {m.avsnitt.map((a, j) => (
-                    <p key={j}>{a}</p>
+                    <p key={j}>
+                      {a}
+                      {!m.ferdig && j === m.avsnitt.length - 1 && (
+                        <span className="ml-0.5 inline-block h-4 w-1.5 translate-y-0.5 animate-pulse bg-accent" />
+                      )}
+                    </p>
                   ))}
                 </div>
-                {m.kilder.length > 0 && (
+                {m.ferdig && m.kilder.length > 0 && (
                   <div className="mt-4 border-t border-border pt-3">
                     <div className="text-xs font-semibold uppercase tracking-wider text-muted">
                       Kilder
@@ -126,7 +161,7 @@ export function ScriptedChat() {
                     </ul>
                   </div>
                 )}
-                {m.merknad && (
+                {m.ferdig && m.merknad && (
                   <div className="mt-3 bg-background px-3 py-2 text-xs italic text-muted">
                     {m.merknad}
                   </div>
@@ -158,7 +193,7 @@ export function ScriptedChat() {
             <button
               key={s.id}
               onClick={() => stillSporsmal(s)}
-              disabled={skriver}
+              disabled={opptatt}
               className={`border px-3 py-1.5 text-xs transition disabled:cursor-not-allowed disabled:opacity-50 ${
                 aktivId === s.id
                   ? "border-accent bg-accent text-accent-ink"
@@ -172,4 +207,23 @@ export function ScriptedChat() {
       </div>
     </div>
   );
+}
+
+function sov(ms: number) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function oppdaterSiste(
+  meldinger: Melding[],
+  oppdater: (m: NrkiMelding) => NrkiMelding,
+): Melding[] {
+  const ut = [...meldinger];
+  for (let i = ut.length - 1; i >= 0; i--) {
+    const m = ut[i];
+    if (m.rolle === "nrki") {
+      ut[i] = oppdater(m);
+      break;
+    }
+  }
+  return ut;
 }
