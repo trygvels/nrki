@@ -1,9 +1,15 @@
 type Storrelse = "sm" | "md" | "lg";
 
-const sizes: Record<Storrelse, string> = {
-  sm: "text-base px-1.5 py-0.5",
-  md: "text-2xl px-2 py-1",
-  lg: "text-5xl px-3 py-2",
+const tekstSizes: Record<Storrelse, string> = {
+  sm: "text-lg",
+  md: "text-2xl",
+  lg: "text-5xl",
+};
+
+const merkeSizes: Record<Storrelse, string> = {
+  sm: "h-1.5 w-1.5",
+  md: "h-2 w-2",
+  lg: "h-3 w-3",
 };
 
 export function Logo({
@@ -16,10 +22,17 @@ export function Logo({
   return (
     <span
       aria-label="nrki"
-      className={`inline-flex bg-white font-black leading-none tracking-tight ${sizes[storrelse]} ${className}`}
+      className={`inline-flex items-center gap-2 text-foreground ${className}`}
     >
-      <span className="text-accent">nr</span>
-      <span className="text-flagg-bla">ki</span>
+      <span
+        aria-hidden
+        className={`inline-block bg-accent ${merkeSizes[storrelse]}`}
+      />
+      <span
+        className={`font-serif font-semibold leading-none tracking-tight ${tekstSizes[storrelse]}`}
+      >
+        nrki
+      </span>
     </span>
   );
 }

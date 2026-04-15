@@ -3,13 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #0a1626;
-  --muted: #4a5568;
-  --subtle: #f3f4f6;
-  --border: #d9dde3;
-  --accent: #ba0c2f;
-  --accent-mork: #8a0823;
+  --muted: #475569;
+  --subtle: #f4f4f5;
+  --border: #e4e4e7;
+  --accent: #931228;
+  --accent-mork: #6f0d1d;
   --accent-ink: #ffffff;
-  --flagg-bla: #00205b;
+  --flagg-bla: #0c2340;
 }
 
 @theme inline {
@@ -23,6 +23,7 @@
   --color-accent-ink: var(--accent-ink);
   --color-flagg-bla: var(--flagg-bla);
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-serif);
 }
 
 html {
