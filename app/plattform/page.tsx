@@ -56,7 +56,6 @@ function Hero() {
       id="intro"
       className="relative overflow-hidden border-b border-border scroll-mt-20"
     >
-      <div className="absolute inset-x-0 top-0 h-1 bg-accent" aria-hidden />
       <div className="px-4 pt-20 pb-20 sm:px-6 sm:pt-24 sm:pb-24">
         <p className="mb-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
           <span className="inline-block h-2 w-2 bg-accent" aria-hidden />

@@ -6,7 +6,8 @@
   --muted: #525252;
   --subtle: #f4f4f5;
   --border: #e5e5e5;
-  --accent: #e4002b;
+  --accent: #ba0c2f;
+  --accent-mork: #8a0823;
   --accent-ink: #ffffff;
 }
 
@@ -17,8 +18,10 @@
   --color-subtle: var(--subtle);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-mork: var(--accent-mork);
   --color-accent-ink: var(--accent-ink);
   --font-sans: var(--font-inter);
+  --font-display: var(--font-bebas);
 }
 
 html {

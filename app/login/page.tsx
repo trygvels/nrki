@@ -16,16 +16,21 @@ export default async function LoginPage({ searchParams }: Props) {
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-16">
       <div className="w-full max-w-sm">
-        <div className="mb-8 flex items-center gap-2">
-          <span className="inline-block h-5 w-1.5 bg-accent" aria-hidden />
-          <span className="text-xl font-semibold tracking-tight">nrki</span>
+        <div className="mb-8">
+          <span className="font-display text-5xl leading-none tracking-wide text-accent">
+            NRKI
+          </span>
+          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted">
+            Norsk Riks-KI · privat konseptforslag
+          </p>
         </div>
         <h1 className="text-2xl font-semibold tracking-tight">
-          Konseptforslag
+          Passordbeskyttet
         </h1>
         <p className="mt-3 text-sm text-muted">
-          Denne siden er foreløpig passordbeskyttet mens innholdet er under
-          utvikling.
+          Denne siden er et privat konseptforslag og er foreløpig
+          passordbeskyttet mens innholdet er under utvikling.{" "}
+          <strong>Den er ikke tilknyttet NRK eller den norske stat.</strong>
         </p>
 
         <form action={logInn} className="mt-8 space-y-3">

@@ -2,7 +2,8 @@ export function Disclaimer() {
   return (
     <div className="w-full bg-foreground text-background">
       <div className="mx-auto max-w-6xl px-4 py-2 text-center text-xs sm:px-6">
-        Konseptforslag — ikke en offisiell statlig tjeneste.{" "}
+        <strong>Privat konseptforslag.</strong> Ikke tilknyttet NRK eller den
+        norske stat.{" "}
         <a
           href="https://github.com/trygvels/nrki"
           className="underline underline-offset-2 hover:text-accent"

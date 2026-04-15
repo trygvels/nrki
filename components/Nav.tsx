@@ -2,31 +2,31 @@ import Link from "next/link";
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
+    <header className="sticky top-0 z-40 w-full bg-accent text-accent-ink shadow-sm">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold tracking-tight"
+          className="font-display text-3xl leading-none tracking-wide"
+          aria-label="nrki — forsiden"
         >
-          <span className="inline-block h-4 w-1.5 bg-accent" aria-hidden />
-          <span className="text-lg">nrki</span>
+          NRKI
         </Link>
-        <nav className="flex items-center gap-5 text-sm text-muted">
-          <Link href="/plattform" className="hover:text-foreground">
+        <nav className="flex items-center gap-5 text-sm font-medium">
+          <Link href="/plattform" className="opacity-90 hover:opacity-100">
             Plattform
           </Link>
-          <Link href="/#prinsipper" className="hover:text-foreground">
+          <Link href="/#prinsipper" className="opacity-90 hover:opacity-100">
             Prinsipper
           </Link>
-          <Link href="/demo" className="hover:text-foreground">
+          <Link href="/demo" className="opacity-90 hover:opacity-100">
             Demo
           </Link>
-          <Link href="/om" className="hover:text-foreground">
+          <Link href="/om" className="opacity-90 hover:opacity-100">
             Om
           </Link>
           <a
             href="https://github.com/trygvels/nrki"
-            className="hover:text-foreground"
+            className="opacity-90 hover:opacity-100"
             target="_blank"
             rel="noopener noreferrer"
           >

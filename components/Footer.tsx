@@ -5,13 +5,17 @@ export function Footer() {
     <footer className="mt-24 border-t border-border bg-subtle">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2 font-semibold tracking-tight">
-            <span className="inline-block h-4 w-1.5 bg-accent" aria-hidden />
-            <span className="text-lg">nrki</span>
+          <div className="flex items-baseline gap-3">
+            <span className="font-display text-3xl leading-none tracking-wide text-accent">
+              NRKI
+            </span>
+            <span className="text-sm text-muted">Norsk Riks-KI</span>
           </div>
-          <p className="mt-3 max-w-sm text-sm text-muted">
-            Norsk Riks-KI — et konseptforslag til en offentlig
-            AI-tjeneste for alle i Norge. Ikke en offisiell statlig tjeneste.
+          <p className="mt-4 max-w-sm text-sm text-muted">
+            Et privat konseptforslag til hvordan en offentlig norsk
+            AI-tjeneste kunne sett ut. <strong>Ikke tilknyttet NRK eller
+            den norske stat.</strong> Eventuelle likheter med offisielle
+            tjenester er bevisste, men kun illustrative.
           </p>
         </div>
         <div>
@@ -81,8 +85,9 @@ export function Footer() {
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-muted sm:px-6">
-          © {new Date().getFullYear()} nrki — konseptforslag. Innholdet er
-          publisert som åpen kildekode.
+          © {new Date().getFullYear()} privat konseptforslag. Innholdet er
+          publisert som åpen kildekode. NRK®, Norsk rikskringkasting AS og
+          den norske stat er ikke involvert i prosjektet.
         </div>
       </div>
     </footer>
