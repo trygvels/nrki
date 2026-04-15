@@ -12,10 +12,13 @@ export function Nav() {
           <span className="text-lg">nrki</span>
         </Link>
         <nav className="flex items-center gap-5 text-sm text-muted">
+          <Link href="/plattform" className="hover:text-foreground">
+            Plattform
+          </Link>
           <Link href="/#prinsipper" className="hover:text-foreground">
             Prinsipper
           </Link>
-          <Link href="/#demo" className="hover:text-foreground">
+          <Link href="/demo" className="hover:text-foreground">
             Demo
           </Link>
           <Link href="/om" className="hover:text-foreground">

@@ -25,6 +25,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/plattform" className="hover:text-accent">
+                Plattformen
+              </Link>
+            </li>
+            <li>
               <Link href="/om" className="hover:text-accent">
                 Om nrki
               </Link>

@@ -14,19 +14,44 @@ er publisert på [nrki.no](https://nrki.no).
   forankret i verifiserte norske kilder — og gratis for alle i Norge.
 - Slik NRK er for nyhetene, kan nrki være for kunstig intelligens.
 
+## To pitcher i ett
+
+nrki er beskrevet på to plan:
+
+1. **Den allmenne AI-tjenesten** — `/` og `/om`. NRK-parallellen, ment for
+   innbyggeren. Trygg, upartisk, gratis, offentlig.
+2. **Plattformen** — `/plattform`. Den utvidede pitchen: nrki som åpen
+   hub for KI i norsk offentlig sektor. Modellagnostisk, MCP-basert,
+   sandbox for etater, embed-widget for små kommuner.
+
 ## Hva ligger i repoet?
 
 ```
 .
 ├── README.md                   ← Denne filen
 ├── docs/
-│   ├── visjon.md               ← Den lange pitchen
+│   ├── visjon.md               ← Den lange pitchen (allmenn-tjenesten)
 │   ├── prinsipper.md           ← De seks prinsippene, utdypet
 │   ├── arkitektur.md           ← Skissert teknisk tilnærming
-│   └── dataintegrasjon.md      ← Hvordan offentlige etater kan bidra
-├── app/                        ← Next.js App Router (sidene)
-├── components/                 ← React-komponenter
-└── lib/demo-samtaler.ts        ← Kuraterte Q&A som vises i demoen
+│   ├── dataintegrasjon.md      ← Hvordan offentlige etater kan bidra
+│   ├── plattform.md            ← Plattform-pitchen, lang versjon
+│   ├── standarder.md           ← MCP, datakontrakter, råformat-tags, hooks
+│   └── for-kommuner.md         ← Onboarding-guide for små kommuner
+├── app/                        ← Next.js App Router
+│   ├── page.tsx                ← Forsiden (allmenn-pitchen)
+│   ├── om/                     ← Lengre vision
+│   ├── demo/                   ← Scripted chat-demo
+│   ├── plattform/              ← Plattform-siden (hub-konseptet)
+│   └── login/                  ← Passord-gate
+├── components/
+│   ├── plattform/              ← Komponenter for plattform-siden
+│   └── (delte)                 ← Hero, Nav, Footer, ScriptedChat osv.
+└── lib/
+    ├── demo-samtaler.ts        ← Kuraterte Q&A for hoveddemoen
+    ├── kommune-demo-samtaler.ts ← Q&A for kommune-embed-widget
+    ├── modeller.ts             ← Modellkatalog
+    ├── sandbox-mock-data.ts    ← Mock-data for sandbox-flowen
+    └── standarder-eksempler.ts ← Kode-snippets for /plattform
 ```
 
 ## Kjør siden lokalt
