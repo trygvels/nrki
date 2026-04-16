@@ -6,6 +6,8 @@ import { Logo } from "@/components/Logo";
 
 const lenker = [
   { href: "/konsept", tekst: "Konsept" },
+  { href: "/arkitektur", tekst: "Arkitektur" },
+  { href: "/veikart", tekst: "Veikart" },
   { href: "/demo", tekst: "Demo" },
   { href: "/om", tekst: "Om" },
   {
