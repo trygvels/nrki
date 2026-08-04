@@ -1,24 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { AUTH_COOKIE, AUTH_COOKIE_VALUE } from "@/lib/auth";
 
+// nrki.no viser kun landingssiden. Resten av konseptsidene ligger fortsatt
+// i repoet, men er ikke tilgjengelige på nett — alt annet sendes til /.
 export function middleware(req: NextRequest) {
-  const path = req.nextUrl.pathname;
-
-  if (path.startsWith("/login")) {
-    return NextResponse.next();
-  }
-
-  const cookie = req.cookies.get(AUTH_COOKIE);
-  if (cookie?.value === AUTH_COOKIE_VALUE) {
+  if (req.nextUrl.pathname === "/") {
     return NextResponse.next();
   }
 
   const url = req.nextUrl.clone();
-  url.pathname = "/login";
+  url.pathname = "/";
   url.search = "";
   return NextResponse.redirect(url);
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|robots.txt).*)"],
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|icon.svg|opengraph-image|robots.txt).*)",
+  ],
 };

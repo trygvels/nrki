@@ -1,86 +1,45 @@
-import Link from "next/link";
-import { Disclaimer } from "@/components/Disclaimer";
-import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { HvorforNrki } from "@/components/HvorforNrki";
-import { Signatur } from "@/components/Signatur";
-import { Nav } from "@/components/Nav";
-import { OffentligData } from "@/components/OffentligData";
-import { SammenligningNRK } from "@/components/SammenligningNRK";
-import { ScriptedChat } from "@/components/ScriptedChat";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   return (
-    <>
-      <Disclaimer />
-      <Nav />
-      <main className="flex-1">
-        <Hero />
-        <HvorforNrki />
-        <OffentligData />
-        <KonseptTease />
-        <section className="border-b border-border" id="demo">
-          <div className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-            <div className="grid gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                  Demo
-                </p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                  Hvordan burde en norsk offentlig KI svare?
-                </h2>
-                <p className="mt-6 text-lg text-muted">
-                  Under kan du prøve et utvalg spørsmål som viser hva slags
-                  tone, nyanse og kildebruk nrki skal holde. Svarene er
-                  kuraterte — de illustrerer ambisjonen, ikke dagens teknologi.
-                </p>
-                <p className="mt-4 text-sm text-muted">
-                  Spørsmålene er bevisst varierte: ett politisk, ett
-                  praktisk-offentlig, ett vitenskapelig, ett faktaorientert og
-                  ett partipolitisk.
-                </p>
-              </div>
-              <ScriptedChat />
-            </div>
-          </div>
-        </section>
-        <SammenligningNRK />
-        <Signatur />
-      </main>
-      <Footer />
-    </>
-  );
-}
+    <main className="flex flex-1 flex-col">
+      <div className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center px-4 py-24 sm:px-6">
+        <Logo storrelse="lg" />
 
-function KonseptTease() {
-  return (
-    <section className="border-b border-border bg-foreground text-background">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-        <div className="grid items-center gap-10 md:grid-cols-[2fr_1fr]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-              Mer enn et grensesnitt
-            </p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              nrki er åpen infrastruktur for datadeling — ikke bare en chat.
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg text-background/70">
-              Innbyggerens spørsmål spenner sjelden bare én etat. Vi
-              kobler etater sammen via MCP, og hver komponent kan brukes
-              i nrki, i etatenes egne løsninger, eller av tredjeparter —
-              ikke bare i ett felles chatvindu.
-            </p>
-          </div>
-          <div className="flex md:justify-end">
-            <Link
-              href="/konsept"
-              className="inline-flex h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-accent-ink transition hover:brightness-110"
-            >
-              Les hele konseptet →
-            </Link>
-          </div>
+        <p className="mt-14 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+          <span className="inline-block h-2 w-2 bg-accent" aria-hidden />
+          Norsk Riks-KI · reservert
+        </p>
+
+        <h1 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+          Kunstig intelligens
+          <br />
+          for alle i Norge.
+        </h1>
+
+        <p className="mt-8 max-w-2xl text-lg text-muted sm:text-xl">
+          nrki.no er et utstillingsvindu for idéen om en norsk riks-KI —
+          trygg, upartisk og offentlig, slik NRK er for allmennkringkasting.
+          Domenet holdes av i påvente av den dagen Norge velger å bygge en
+          nasjonal KI-plattform for alle.
+        </p>
+
+        <div className="mt-14 border-t border-border pt-8">
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted">
+            Reservert av
+          </p>
+          <p className="mt-2 text-lg font-semibold">Trygve Leithe Svalheim</p>
         </div>
       </div>
-    </section>
+
+      <footer className="border-t border-border bg-subtle">
+        <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+          <p className="text-sm text-muted">
+            Et privat initiativ.{" "}
+            <strong>Ikke tilknyttet NRK eller den norske stat.</strong>
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 }
